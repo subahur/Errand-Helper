@@ -11,8 +11,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     public static Button button_new_task_submit;
-    //try
-    //try againk
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
