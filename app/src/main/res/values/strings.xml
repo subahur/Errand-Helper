@@ -5,4 +5,12 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_task_new">TaskNew</string>
     <string name="title_activity_task_select">TaskSelect</string>
+
+    <string-array name = "task_types">
+
+        <item> Grocery </item>
+        <item> Ride </item>
+        <item> Cleaning </item>
+
+    </string-array>
 </resources>
