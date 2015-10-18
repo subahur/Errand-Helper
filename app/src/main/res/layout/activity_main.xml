@@ -9,7 +9,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button_new_task"
+        android:id="@+id/ButtonNewTask"
         android:text="Tasker"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
@@ -18,9 +18,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Worker"
-        android:id="@+id/button_select_task"
-        android:layout_below="@+id/button_new_task"
-        android:layout_alignLeft="@+id/button_new_task"
-        android:layout_alignStart="@+id/button_new_task" />
+        android:id="@+id/ButtonTaskSelect"
+        android:layout_below="@+id/ButtonNewTask"
+        android:layout_alignLeft="@+id/ButtonNewTask"
+        android:layout_alignStart="@+id/ButtonNewTask" />
 
 </RelativeLayout>

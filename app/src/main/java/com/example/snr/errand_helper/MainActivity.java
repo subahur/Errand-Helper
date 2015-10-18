@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickNewTaskButtonListner() {
-        button_new_task_submit = (Button) findViewById(R.id.button_new_task);
+        button_new_task_submit = (Button) findViewById(R.id.ButtonNewTask);
         button_new_task_submit.setOnClickListener(
                 new View.OnClickListener() {
 
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickSelectTaskButtonListner() {
-        button_new_task_submit = (Button) findViewById(R.id.button_select_task);
+        button_new_task_submit = (Button) findViewById(R.id.ButtonTaskSelect);
         button_new_task_submit.setOnClickListener(
                 new View.OnClickListener() {
 
