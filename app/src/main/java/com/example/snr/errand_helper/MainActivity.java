@@ -17,19 +17,33 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        onClickButtonListner();
+        onClickNewTaskButtonListner();
+        onClickSelectTaskButtonListner();
     }
 
-    public void onClickButtonListner() {
+    public void onClickNewTaskButtonListner() {
         button_new_task_submit = (Button) findViewById(R.id.button_new_task);
         button_new_task_submit.setOnClickListener(
-        new View.OnClickListener() {
+                new View.OnClickListener() {
 
-            public void onClick(View w) {
-                Intent intent = new Intent("com.example.snr.errand_helper.TaskNew");
-                startActivity(intent);
-            }
-        }
+                    public void onClick(View w) {
+                        Intent intent = new Intent("com.example.snr.errand_helper.TaskNew");
+                        startActivity(intent);
+                    }
+                }
+        );
+    }
+
+    public void onClickSelectTaskButtonListner() {
+        button_new_task_submit = (Button) findViewById(R.id.button_select_task);
+        button_new_task_submit.setOnClickListener(
+                new View.OnClickListener() {
+
+                    public void onClick(View w) {
+                        Intent intent = new Intent("com.example.snr.errand_helper.TaskSelect");
+                        startActivity(intent);
+                    }
+                }
         );
     }
 
