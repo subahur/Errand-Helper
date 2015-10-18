@@ -16,6 +16,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".TaskNew"
+            android:label="@string/title_activity_task_new" >
+            <intent-filter>
+                <action android:name="com.example.snr.errand_helper.TaskNew" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

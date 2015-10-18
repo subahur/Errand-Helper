@@ -1,18 +1,36 @@
 package com.example.snr.errand_helper;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static Button button_new_task_submit;
     //try
     //try againk
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        onClickButtonListner();
+    }
+
+    public void onClickButtonListner() {
+        button_new_task_submit = (Button) findViewById(R.id.button_new_task);
+        button_new_task_submit.setOnClickListener(
+        new View.OnClickListener() {
+
+            public void onClick(View w) {
+                Intent intent = new Intent("com.example.snr.errand_helper.TaskNew");
+                startActivity(intent);
+            }
+        }
+        );
     }
 
     @Override
