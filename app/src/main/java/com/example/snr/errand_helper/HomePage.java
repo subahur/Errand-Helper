@@ -21,7 +21,7 @@ public class HomePage extends AppCompatActivity {
     }
 
     public void onClickNewTaskButtonListner() {
-        button_new_task_submit = (Button) findViewById(R.id.ButtonNewTask);
+        button_new_task_submit = (Button) findViewById(R.id.ButtonLogin);
         button_new_task_submit.setOnClickListener(
                 new View.OnClickListener() {
 

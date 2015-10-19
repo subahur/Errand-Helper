@@ -9,18 +9,9 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/ButtonNewTask"
-        android:text="Tasker"
+        android:id="@+id/ButtonLogin"
+        android:text="Login"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Worker"
-        android:id="@+id/ButtonTaskSelect"
-        android:layout_below="@+id/ButtonNewTask"
-        android:layout_alignLeft="@+id/ButtonNewTask"
-        android:layout_alignStart="@+id/ButtonNewTask" />
 
 </RelativeLayout>
