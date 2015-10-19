@@ -12,6 +12,7 @@
         android:id="@+id/ButtonLogin"
         android:text="Login"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="onButtonClick" />
 
 </RelativeLayout>

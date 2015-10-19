@@ -10,27 +10,13 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static Button button_new_task_submit;
     //
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        onClickLoginButtonListner();
 
-    }
 
-    public void onClickLoginButtonListner() {
-        button_new_task_submit = (Button) findViewById(R.id.ButtonLogin);
-        button_new_task_submit.setOnClickListener(
-                new View.OnClickListener() {
-
-                    public void onClick(View w) {
-                        Intent intent = new Intent("com.example.snr.errand_helper.HomePage");
-                        startActivity(intent);
-                    }
-                }
-        );
     }
 
 
@@ -39,6 +25,15 @@ public class MainActivity extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
+    }
+
+    public void onButtonClick(View v){
+        if(v.getId() == R.id.ButtonLogin)
+        {
+            Intent intent = new Intent(MainActivity.this, HomePage.class);
+            startActivity(intent);
+
+        }
     }
 
     @Override
