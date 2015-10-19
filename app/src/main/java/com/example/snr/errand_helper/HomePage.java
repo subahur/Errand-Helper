@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class HomePage extends AppCompatActivity {
 
@@ -16,6 +17,9 @@ public class HomePage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
+        String username = getIntent().getStringExtra("Username");
+        TextView tv = (TextView)findViewById(R.id.TVusername);
+        tv.setText(username);
         onClickNewTaskButtonListner();
         onClickSelectTaskButtonListner();
     }

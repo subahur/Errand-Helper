@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,7 +31,10 @@ public class MainActivity extends AppCompatActivity {
     public void onButtonClick(View v){
         if(v.getId() == R.id.ButtonLogin)
         {
+            EditText a = (EditText)findViewById(R.id.TFusername);
+            String str = a.getText().toString();
             Intent intent = new Intent(MainActivity.this, HomePage.class);
+            intent.putExtra("Username",str);
             startActivity(intent);
 
         }
