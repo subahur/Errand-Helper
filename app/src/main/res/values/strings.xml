@@ -13,4 +13,5 @@
         <item> Cleaning </item>
 
     </string-array>
+    <string name="title_activity_home_page">HomePage</string>
 </resources>

@@ -8,36 +8,47 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class HomePage extends AppCompatActivity {
 
     public static Button button_new_task_submit;
-    //
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        onClickLoginButtonListner();
-
+        setContentView(R.layout.activity_home_page);
+        onClickNewTaskButtonListner();
+        onClickSelectTaskButtonListner();
     }
 
-    public void onClickLoginButtonListner() {
-        button_new_task_submit = (Button) findViewById(R.id.ButtonLogin);
+    public void onClickNewTaskButtonListner() {
+        button_new_task_submit = (Button) findViewById(R.id.ButtonNewTask);
         button_new_task_submit.setOnClickListener(
                 new View.OnClickListener() {
 
                     public void onClick(View w) {
-                        Intent intent = new Intent("com.example.snr.errand_helper.HomePage");
+                        Intent intent = new Intent("com.example.snr.errand_helper.TaskNew");
                         startActivity(intent);
                     }
                 }
         );
     }
 
+    public void onClickSelectTaskButtonListner() {
+        button_new_task_submit = (Button) findViewById(R.id.ButtonTaskSelect);
+        button_new_task_submit.setOnClickListener(
+                new View.OnClickListener() {
 
+                    public void onClick(View w) {
+                        Intent intent = new Intent("com.example.snr.errand_helper.TaskSelect");
+                        startActivity(intent);
+                    }
+                }
+        );
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_home_page, menu);
         return true;
     }
 
