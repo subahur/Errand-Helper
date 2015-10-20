@@ -55,5 +55,14 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit Task"
+        android:id="@+id/ButtonSubmitTask"
+        android:layout_below="@+id/TFTaskName"
+        android:layout_centerHorizontal="true"
+        android:onClick="onButtonClick" />
+
 
 </RelativeLayout>
