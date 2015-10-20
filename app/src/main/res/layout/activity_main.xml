@@ -57,7 +57,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sign Up"
-        android:id="@+id/ButtonSignUp"
+        android:id="@+id/signUp"
         android:layout_below="@+id/ButtonLogin"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="59dp"
