@@ -45,6 +45,11 @@
         </activity>
         <activity android:name=".SignUp"
             android:label="SignUp">
+            <intent-filter>
+                <action android:name="com.example.snr.errand_helper.SignUp" />
+
+                <category android:name="android.intent.category.default" />
+            </intent-filter>
 
         </activity>
     </application>
