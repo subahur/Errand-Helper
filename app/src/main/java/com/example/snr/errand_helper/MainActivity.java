@@ -6,10 +6,12 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+    DatabaseHelper helper = new DatabaseHelper(this);
 
     ///
     @Override
@@ -31,11 +33,29 @@ public class MainActivity extends AppCompatActivity {
     public void onButtonClick(View v){
         if(v.getId() == R.id.ButtonLogin)
         {
-            EditText a = (EditText)findViewById(R.id.TFusername);
+            //check if email and password are matching
+            EditText a = (EditText)findViewById(R.id.TFemail);
             String str = a.getText().toString();
-            Intent intent = new Intent(MainActivity.this, HomePage.class);
-            intent.putExtra("Username",str);
-            startActivity(intent);
+
+            EditText b = (EditText)findViewById(R.id.TFpassword);
+            String form_password = b.getText().toString();
+
+            String db_password = helper.searchPass(str);
+
+            //check if password from form matches the one in db
+            if(form_password.equals(db_password)){
+                //then go to the homepage
+                Intent intent = new Intent(MainActivity.this, HomePage.class);
+                intent.putExtra("Username",str);
+                startActivity(intent);
+            }
+            else{
+                //display error pop up
+                Toast error = Toast.makeText(MainActivity.this ,"Invalid Email and/or password ", Toast.LENGTH_SHORT);
+                error.show();
+            }
+
+
 
         }
         if(v.getId() == R.id.ButtonSignUp)

@@ -11,6 +11,7 @@ import android.widget.Toast;
  */
 public class SignUp extends Activity {
 
+    DatabaseHelper helper = new DatabaseHelper(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,15 +20,15 @@ public class SignUp extends Activity {
     }
 
     //
-    public void onSignUpClick(View v){
+    public void onButtonClick(View v){
 
         if(v.getId() == R.id.signUp){
-            EditText username = (EditText)findViewById(R.id.username);
-            EditText password1 = (EditText)findViewById(R.id.password1);
-            EditText password2 = (EditText)findViewById(R.id.password2);
+            EditText email = (EditText)findViewById(R.id.TFemail);
+            EditText password1 = (EditText)findViewById(R.id.TFpassword1);
+            EditText password2 = (EditText)findViewById(R.id.TFpassword2);
 
             //convert all to string values
-            String usernamestr = username.getText().toString();
+            String emailstr = email.getText().toString();
             String password1str = password1.getText().toString();
             String password2str = password2.getText().toString();
 
@@ -35,6 +36,16 @@ public class SignUp extends Activity {
                 //display error pop up
                 Toast check_password = Toast.makeText(SignUp.this ,"Passwords don't match", Toast.LENGTH_SHORT);
                 check_password.show();
+            }
+            else{
+                //create a new user and add in db
+                User u = new User();
+                u.setEmail(emailstr);
+                u.setPassword(password1str);
+
+                helper.insertUser(u);
+                Toast signup_success = Toast.makeText(SignUp.this ,"Sign up successful", Toast.LENGTH_SHORT);
+                signup_success.show();
             }
         }
 
