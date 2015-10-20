@@ -18,6 +18,7 @@ public class SignUp extends Activity {
         setContentView(R.layout.activity_signup);
     }
 
+    //
     public void onSignUpClick(View v){
 
         if(v.getId() == R.id.signUp){
