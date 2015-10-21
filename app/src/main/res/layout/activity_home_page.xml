@@ -11,14 +11,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/ButtonLogin"
-        android:text="Tasker"
+        android:text="@string/tasker"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Worker"
+        android:text="@string/worker"
         android:id="@+id/ButtonTaskSelect"
         android:layout_below="@+id/ButtonLogin"
         android:layout_alignLeft="@+id/ButtonLogin"
@@ -27,7 +27,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome, "
+        android:text="@string/welcome"
         android:id="@+id/textView10"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
@@ -45,7 +45,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Logout"
+        android:text="@string/logout"
         android:id="@+id/BLogout"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"

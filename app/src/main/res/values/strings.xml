@@ -1,5 +1,19 @@
 <resources>
     <string name="app_name">Errand-Helper</string>
+    <string name="tasker">Tasker</string>
+    <string name="worker">Worker</string>
+    <string name="welcome">Welcome to ErrandHelper, </string>
+    <string name="logout">Logout</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="signup">Sign up</string>
+    <string name="retypepass">Re-type Password</string>
+    <string name="taskdescription">Task Description</string>
+    <string name="tasktype">Task Type</string>
+    <string name="submittask">Submit</string>
+    <string name="selecttask">Select a Task</string>
+    <string name="exampletask">Example Task</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>

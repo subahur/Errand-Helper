@@ -11,7 +11,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Select a Task"
+        android:text="@string/selecttask"
         android:id="@+id/textView2"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
@@ -31,49 +31,49 @@
         <Button
             android:layout_width="fill_parent"
             android:layout_height="200px"
-            android:text="act1"/>
+            android:text="@string/exampletask"/>
 
         <Button
             android:layout_width="fill_parent"
             android:layout_height="200px"
-            android:text="act2"/>
+            android:text="@string/exampletask"/>
         <Button
             android:layout_width="fill_parent"
             android:layout_height="200px"
-            android:text="act3"/>
+            android:text="@string/exampletask"/>
         <Button
             android:layout_width="fill_parent"
             android:layout_height="200px"
-            android:text="act4"/>
+            android:text="@string/exampletask"/>
         <Button
             android:layout_width="fill_parent"
             android:layout_height="200px"
-            android:text="act5"/>
+            android:text="@string/exampletask"/>
 
         <Button
             android:layout_width="fill_parent"
             android:layout_height="200px"
-            android:text="act6"/>
+            android:text="@string/exampletask"/>
 
         <Button
             android:layout_width="fill_parent"
             android:layout_height="200px"
-            android:text="act7"/>
+            android:text="@string/exampletask"/>
 
         <Button
             android:layout_width="fill_parent"
             android:layout_height="200px"
-            android:text="act8"/>
+            android:text="@string/exampletask"/>
 
         <Button
             android:layout_width="fill_parent"
             android:layout_height="200px"
-            android:text="act9"/>
+            android:text="@string/exampletask"/>
 
         <Button
             android:layout_width="fill_parent"
             android:layout_height="200px"
-            android:text="subahu!"/>
+            android:text="@string/exampletask"/>
 
         </LinearLayout>
 
