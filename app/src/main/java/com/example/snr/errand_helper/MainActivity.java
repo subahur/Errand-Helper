@@ -1,6 +1,7 @@
 package com.example.snr.errand_helper;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
     //
     //
     //
+
     public void onButtonClick(View v){
         if(v.getId() == R.id.ButtonLogin)
         {
@@ -79,6 +81,8 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, SignUp.class);
             startActivity(intent);
         }
+
+
     }
 
     @Override

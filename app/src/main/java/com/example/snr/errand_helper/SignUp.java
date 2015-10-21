@@ -1,6 +1,7 @@
 package com.example.snr.errand_helper;
 
 import android.app.Activity;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -20,6 +21,7 @@ public class SignUp extends Activity {
     }
 
     //
+
     public void onButtonClick(View v){
 
         if(v.getId() == R.id.signUp){
@@ -36,6 +38,7 @@ public class SignUp extends Activity {
                 //display error pop up
                 Toast check_password = Toast.makeText(SignUp.this ,"Passwords don't match", Toast.LENGTH_SHORT);
                 check_password.show();
+
             }
             else{
                 //create a new user and add in db
