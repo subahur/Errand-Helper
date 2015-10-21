@@ -12,11 +12,14 @@ import android.widget.TextView;
 public class HomePage extends AppCompatActivity {
 
     public static Button button_new_task_submit;
+    UserSessionManager session;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
+        session = new UserSessionManager(getApplicationContext());
+
         String username = getIntent().getStringExtra("Username");
         TextView tv = (TextView)findViewById(R.id.TVusername);
         tv.setText(username);
@@ -49,6 +52,14 @@ public class HomePage extends AppCompatActivity {
                 }
         );
     }
+
+    public void onButtonClick(View v) {
+        if (v.getId() == R.id.BLogout) {
+            //logout and redirect to login oage which is main activity
+            session.logoutUser();
+        }
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
