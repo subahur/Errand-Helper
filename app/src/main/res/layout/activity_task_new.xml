@@ -64,5 +64,15 @@
         android:layout_centerHorizontal="true"
         android:onClick="onButtonClick" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        android:id="@+id/BLogout"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/textView"
+        android:layout_alignEnd="@+id/textView"
+        android:onClick="onButtonClick" />
+
 
 </RelativeLayout>

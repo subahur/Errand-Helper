@@ -4,13 +4,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 public class TaskSelect extends AppCompatActivity {
+
+    UserSessionManager session;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_select);
+        session = new UserSessionManager(getApplicationContext());
     }
 
     @Override
@@ -33,5 +37,13 @@ public class TaskSelect extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+    public void onButtonClick(View v) {
+        if (v.getId() == R.id.BLogout) {
+            //logout and redirect to login oage which is main activity
+            session.logoutUser();
+        }
     }
 }

@@ -8,11 +8,14 @@ import android.view.View;
 import android.widget.Toast;
 
 public class TaskNew extends AppCompatActivity {
+
+    UserSessionManager session;
     //
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_new);
+        session = new UserSessionManager(getApplicationContext());
     }
     //kljlkjkk
     @Override
@@ -43,5 +46,10 @@ public class TaskNew extends AppCompatActivity {
             Toast task_submit_success = Toast.makeText(TaskNew.this ,"Task is successfully created", Toast.LENGTH_SHORT);
             task_submit_success.show();
         }
+        if (v.getId() == R.id.BLogout) {
+            //logout and redirect to login oage which is main activity
+            session.logoutUser();
+        }
     }
 }
+

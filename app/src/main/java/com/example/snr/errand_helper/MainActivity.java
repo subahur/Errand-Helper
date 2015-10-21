@@ -9,15 +9,29 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.HashMap;
+
 public class MainActivity extends AppCompatActivity {
 
     DatabaseHelper helper = new DatabaseHelper(this);
+    UserSessionManager session;
 
     ///
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        session = new UserSessionManager(getApplicationContext());
+        if(session.isLoggedIn()){
+            Intent intent = new Intent(getApplicationContext(), HomePage.class);
+            HashMap<String, String> user = session.getUserInfo();
+            String str = user.get(UserSessionManager.KEY_EMAIL);
+            intent.putExtra("Username",str);
+            startActivity(intent);
+            finish();
+        }
+
+
     }
 
 
@@ -46,8 +60,10 @@ public class MainActivity extends AppCompatActivity {
             if(form_password.equals(db_password)){
                 //then go to the homepage
                 Intent intent = new Intent(MainActivity.this, HomePage.class);
+                session.createSession(str);
                 intent.putExtra("Username",str);
                 startActivity(intent);
+                finish();
             }
             else{
                 //display error pop up
