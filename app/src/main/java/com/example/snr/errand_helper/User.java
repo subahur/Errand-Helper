@@ -3,8 +3,9 @@ package com.example.snr.errand_helper;
 
 public class User  {
 
-    String email, password;
+    private String email, password;
 
+    int rank;
 
     public void setEmail(String email){
         this.email = email;
@@ -20,5 +21,13 @@ public class User  {
 
     public String getPassword(){
         return this.password;
+    }
+
+    public void setRank(int rank){
+        this.rank = rank;
+    }
+
+    public int getRank(){
+        return this.rank;
     }
 }

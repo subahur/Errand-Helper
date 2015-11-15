@@ -7,21 +7,35 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 
-public class DatabaseHelper extends SQLiteOpenHelper {
+public class TaskDBHelper extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 1;
-    private static final String DATABASE_NAME = "users.db";
-    private static final String TABLE_NAME = "users";
-    private static final String COLUMN_ID = "id";
-    private static final String COLUMN_EMAIL = "email";
-    private static final String COLUMN_PASSWORD = "password";
-    SQLiteDatabase db;
-    private static final String TABLE_CREATE = "create table " + TABLE_NAME + " ("
-            + COLUMN_ID + " integer primary key not null,"
-            + COLUMN_EMAIL + " text not null,"
-            + COLUMN_PASSWORD + " text not null)";
+    private static final String DATABASE_NAME = "tasks.db";
+    private static final String TABLE_NAME = "tasks";
+    private static final String COLUMN_ID = "task_id";
+    private static final String COLUMN_NAME = "task_name";
+    private static final String COLUMN_TYPE = "type";
+    private static final String COLUMN_DESC = "description";
+    private static final String COLUMN_CREATIONTIME = "creation_time";
+    private static final String COLUMN_DUETIME = "due_time";
+    private static final String COLUMN_CREATORID = "creator_id";
+    private static final String COLUMN_WORKERID = "woker_id";
+    private static final String COLUMN_STATUS = "status";
 
-    public DatabaseHelper(Context context){
+    SQLiteDatabase db;
+    private static final String TABLE_CREATE = "create table " + TABLE_NAME +" ("
+            + COLUMN_ID + " integer primary key not null, "
+            + COLUMN_NAME + " text not null,"
+            + COLUMN_TYPE + " text not null,"
+            + COLUMN_DESC + " text not null,"
+            + COLUMN_CREATIONTIME + " date not null,"
+            + COLUMN_DUETIME + " date not null,"
+            + COLUMN_CREATORID + " integer not null,"
+            + COLUMN_WORKERID + " integer,"
+            + COLUMN_STATUS + " text not null,"
+            + " foreign key (" + COLUMN_CREATORID + ") references users";
+
+    public TaskDBHelper(Context context){
         super(context, DATABASE_NAME , null , DATABASE_VERSION);
     }
 
@@ -30,6 +44,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         this.db = db;
     }
 
+    public void addTask(Task t) {
+        db = this.getWritableDatabase();
+    }
+    /**
+     * Code from user database for reference - Leifeng
+     *
     public void insertUser(User u){
         db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -64,6 +84,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return pass;
     }
+    **/
 
     public void insertTask(Task t){
         db = this.getWritableDatabase();
