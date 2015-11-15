@@ -28,10 +28,9 @@ public class HomePage extends AppCompatActivity {
     }
 
     public void onClickNewTaskButtonListner() {
-        button_new_task_submit = (Button) findViewById(R.id.ButtonLogin);
+        button_new_task_submit = (Button) findViewById(R.id.BTasker);
         button_new_task_submit.setOnClickListener(
                 new View.OnClickListener() {
-
                     public void onClick(View w) {
                         Intent intent = new Intent("com.example.snr.errand_helper.TaskNew");
                         startActivity(intent);
@@ -41,7 +40,7 @@ public class HomePage extends AppCompatActivity {
     }
 
     public void onClickSelectTaskButtonListner() {
-        button_new_task_submit = (Button) findViewById(R.id.ButtonTaskSelect);
+        button_new_task_submit = (Button) findViewById(R.id.BWorker);
         button_new_task_submit.setOnClickListener(
                 new View.OnClickListener() {
 
@@ -53,11 +52,11 @@ public class HomePage extends AppCompatActivity {
         );
     }
 
-    public void onButtonClick(View v) {
-        if (v.getId() == R.id.BLogout) {
+    public void logOut(View v) {
+        //if (v.getId() == R.id.BLogout) {
             //logout and redirect to login oage which is main activity
             session.logoutUser();
-        }
+        //}
     }
 
     @Override
