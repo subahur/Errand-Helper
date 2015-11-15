@@ -8,9 +8,9 @@ import java.util.Date;
  */
 public class Task {
 
-    private String name, type, description;
+    private String name, type, description, status;
     private Date creationTime, dueTime;
-    private int creatorID, workerID;
+    private int taskID, creatorID, workerID;
 
     public Task() {
         this.creationTime = Calendar.getInstance().getTime();
@@ -26,6 +26,14 @@ public class Task {
 
     public Date getDueTime() {
         return this.dueTime;
+    }
+
+    public void setTaskID(int taskID){
+        this.taskID = taskID;
+    }
+
+    public int getTaskID(){
+        return this.taskID;
     }
 
     public void setCreator(int creatorID){
@@ -44,11 +52,19 @@ public class Task {
         return this.workerID;
     }
 
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getStatus() {
+        return this.status;
+    }
+
     public void setName(String name){
         this.name = name;
     }
 
-    public String getNmae(){
+    public String getName(){
         return this.name;
     }
 

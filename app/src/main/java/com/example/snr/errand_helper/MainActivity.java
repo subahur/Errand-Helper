@@ -1,7 +1,6 @@
 package com.example.snr.errand_helper;
 
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -14,7 +13,7 @@ import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
 
-    DatabaseHelper helper = new DatabaseHelper(this);
+    UserDBHelper helper = new UserDBHelper(this);
     UserSessionManager session;
 
     ///

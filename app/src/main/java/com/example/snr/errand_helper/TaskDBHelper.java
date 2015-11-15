@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.text.SimpleDateFormat;
+
 
 public class TaskDBHelper extends SQLiteOpenHelper {
 
@@ -28,12 +30,12 @@ public class TaskDBHelper extends SQLiteOpenHelper {
             + COLUMN_NAME + " text not null,"
             + COLUMN_TYPE + " text not null,"
             + COLUMN_DESC + " text not null,"
-            + COLUMN_CREATIONTIME + " date not null,"
-            + COLUMN_DUETIME + " date not null,"
-            + COLUMN_CREATORID + " integer not null,"
+            + COLUMN_CREATIONTIME + " date," // not null, hasn't implemented yet
+            + COLUMN_DUETIME + " date,"
+            + COLUMN_CREATORID + " integer," // not null, hasn't implemented yet
             + COLUMN_WORKERID + " integer,"
-            + COLUMN_STATUS + " text not null,"
-            + " foreign key (" + COLUMN_CREATORID + ") references users";
+            + COLUMN_STATUS + " text)"; // not null, hasn't implemented yet
+            //+ " foreign key (" + COLUMN_CREATORID + ") references users)"; not implemented yet. note the parenthesis!!
 
     public TaskDBHelper(Context context){
         super(context, DATABASE_NAME , null , DATABASE_VERSION);
@@ -44,8 +46,25 @@ public class TaskDBHelper extends SQLiteOpenHelper {
         this.db = db;
     }
 
-    public void addTask(Task t) {
+    public void insertTask(Task t) {
         db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+        String query = "select * from tasks";
+        Cursor cursor = db.rawQuery(query, null);
+        int count = cursor.getCount();
+
+        values.put(COLUMN_ID, count);
+        t.setTaskID(count);
+        values.put(COLUMN_NAME, t.getName());
+        values.put(COLUMN_DESC, t.getDesc());
+        values.put(COLUMN_TYPE, t.getType());
+//        values.put(COLUMN_STATUS, t.getStatus());
+//        values.put(COLUMN_CREATORID, t.getCreator());
+//        values.put(COLUMN_DUETIME, dateFormat.format(t.getDueTime()));
+//        values.put(COLUMN_CREATIONTIME, dateFormat.format(t.getCreationTime()));
+
     }
     /**
      * Code from user database for reference - Leifeng
@@ -85,11 +104,6 @@ public class TaskDBHelper extends SQLiteOpenHelper {
         return pass;
     }
     **/
-
-    public void insertTask(Task t){
-        db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-    }
 
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
         String query = "DROP TABLE IF EXISTS "+TABLE_NAME;

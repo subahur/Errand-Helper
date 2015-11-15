@@ -10,29 +10,18 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Post a new task"
+        android:text="@string/postnewtask"
         android:id="@+id/textView"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <Spinner
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/spin"
-        android:entries="@array/task_types"
-        android:spinnerMode="dropdown"
-        android:layout_above="@+id/textView3"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"> </Spinner>
-
-
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/taskdescription"
-        android:id="@+id/textView3"
+        android:text="@string/taskname"
+        android:id="@+id/TaskName"
         android:layout_above="@+id/TFTaskName"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -42,6 +31,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/TFTaskName"
         android:layout_centerVertical="true"
+        android:layout_above="@+id/taskType"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
@@ -50,17 +40,45 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/tasktype"
-        android:id="@+id/textView4"
-        android:layout_above="@+id/spin"
+        android:id="@+id/taskType"
+        android:layout_above="@+id/SPTaskTypes"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <Spinner
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/SPTaskTypes"
+        android:entries="@array/task_types"
+        android:spinnerMode="dropdown"
+        android:layout_above="@+id/taskDesc"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"> </Spinner>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/taskdescription"
+        android:id="@+id/taskDesc"
+        android:layout_above="@+id/TFTaskDescription"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/TFTaskDescription"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/submittask"
         android:id="@+id/ButtonSubmitTask"
-        android:layout_below="@+id/TFTaskName"
+        android:layout_below="@id/TFTaskDescription"
         android:layout_centerHorizontal="true"
         android:onClick="onButtonClick" />
 

@@ -5,7 +5,7 @@ public class User  {
 
     private String email, password;
 
-    int rank;
+    int userID;
 
     public void setEmail(String email){
         this.email = email;
@@ -23,11 +23,11 @@ public class User  {
         return this.password;
     }
 
-    public void setRank(int rank){
-        this.rank = rank;
+    public void setUserID(int userID){
+        this.userID = userID;
     }
 
-    public int getRank(){
-        return this.rank;
+    public int getUserID(){
+        return this.userID;
     }
 }

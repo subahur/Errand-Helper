@@ -5,11 +5,14 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 public class TaskNew extends AppCompatActivity {
 
     UserSessionManager session;
+    TaskDBHelper helper = new TaskDBHelper(this);
     //
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +20,7 @@ public class TaskNew extends AppCompatActivity {
         setContentView(R.layout.activity_task_new);
         session = new UserSessionManager(getApplicationContext());
     }
-    //kljlkjkk
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -43,6 +46,21 @@ public class TaskNew extends AppCompatActivity {
     public void onButtonClick(View v){
         //for now just create a pop up, later will create a entry in the table tasks
         if(v.getId() == R.id.ButtonSubmitTask){
+            EditText taskName = (EditText)findViewById(R.id.TFTaskName);
+            EditText taskDesc = (EditText)findViewById(R.id.TFTaskDescription);
+            Spinner taskType = (Spinner)findViewById(R.id.SPTaskTypes);
+
+            String taskNameStr = taskName.toString();
+            String taskDescStr = taskDesc.toString();
+            String taskTypeStr = taskType.getSelectedItem().toString();
+
+            Task t = new Task();
+            t.setName(taskNameStr);
+            t.setDesc(taskDescStr);
+            t.setType(taskTypeStr);
+
+            helper.insertTask(t);
+
             Toast task_submit_success = Toast.makeText(TaskNew.this ,"Task is successfully created", Toast.LENGTH_SHORT);
             task_submit_success.show();
         }

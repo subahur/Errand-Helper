@@ -7,21 +7,21 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 
-public class DatabaseHelper extends SQLiteOpenHelper {
+public class UserDBHelper extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "users.db";
     private static final String TABLE_NAME = "users";
-    private static final String COLUMN_ID = "id";
+    private static final String COLUMN_USERID = "user_id";
     private static final String COLUMN_EMAIL = "email";
     private static final String COLUMN_PASSWORD = "password";
     SQLiteDatabase db;
     private static final String TABLE_CREATE = "create table " + TABLE_NAME + " ("
-            + COLUMN_ID + " integer primary key not null,"
+            + COLUMN_USERID + " integer primary key not null,"
             + COLUMN_EMAIL + " text not null,"
             + COLUMN_PASSWORD + " text not null)";
 
-    public DatabaseHelper(Context context){
+    public UserDBHelper(Context context){
         super(context, DATABASE_NAME , null , DATABASE_VERSION);
     }
 
@@ -38,7 +38,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery(query, null);
         int count = cursor.getCount();
 
-        values.put(COLUMN_ID, count);
+        values.put(COLUMN_USERID, count);
+        u.setUserID(count);
         values.put(COLUMN_EMAIL, u.getEmail());
         values.put(COLUMN_PASSWORD, u.getPassword());
         db.insert(TABLE_NAME, null, values);

@@ -1,7 +1,6 @@
 package com.example.snr.errand_helper;
 
 import android.app.Activity;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -12,7 +11,7 @@ import android.widget.Toast;
  */
 public class SignUp extends Activity {
 
-    DatabaseHelper helper = new DatabaseHelper(this);
+    UserDBHelper helper = new UserDBHelper(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
