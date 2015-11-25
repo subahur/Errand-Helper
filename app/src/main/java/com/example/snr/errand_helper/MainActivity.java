@@ -46,13 +46,13 @@ public class MainActivity extends AppCompatActivity {
     //
 
     public void onButtonClick(View v){
-        if(v.getId() == R.id.ButtonLogin)
+        if(v.getId() == R.id.btn_login)
         {
             //check if email and password are matching
-            EditText a = (EditText)findViewById(R.id.TFemail);
+            EditText a = (EditText)findViewById(R.id.tf_email);
             String str = a.getText().toString();
 
-            EditText b = (EditText)findViewById(R.id.TFpassword);
+            EditText b = (EditText)findViewById(R.id.tf_password);
             String form_password = b.getText().toString();
 
             String db_password = helper.searchPass(str);
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         }
-        if(v.getId() == R.id.signUp)
+        if(v.getId() == R.id.btn_signup)
         {
             Intent intent = new Intent(MainActivity.this, SignUp.class);
             startActivity(intent);

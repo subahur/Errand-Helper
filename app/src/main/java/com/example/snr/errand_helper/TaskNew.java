@@ -1,13 +1,20 @@
 package com.example.snr.errand_helper;
 
+import android.app.Dialog;
+import android.support.v4.app.DialogFragment;
+import android.app.TimePickerDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.format.DateFormat;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TimePicker;
 import android.widget.Toast;
+
+import java.util.Calendar;
 
 public class TaskNew extends AppCompatActivity {
 
@@ -45,10 +52,10 @@ public class TaskNew extends AppCompatActivity {
 
     public void onButtonClick(View v){
         //for now just create a pop up, later will create a entry in the table tasks
-        if(v.getId() == R.id.ButtonSubmitTask){
-            EditText taskName = (EditText)findViewById(R.id.TFTaskName);
-            EditText taskDesc = (EditText)findViewById(R.id.TFTaskDescription);
-            Spinner taskType = (Spinner)findViewById(R.id.SPTaskTypes);
+        if(v.getId() == R.id.btn_submit_task){
+            EditText taskName = (EditText)findViewById(R.id.et_task_name);
+            EditText taskDesc = (EditText)findViewById(R.id.tf_task_desc);
+            Spinner taskType = (Spinner)findViewById(R.id.sp_task_type);
 
             String taskNameStr = taskName.toString();
             String taskDescStr = taskDesc.toString();
@@ -64,10 +71,35 @@ public class TaskNew extends AppCompatActivity {
             Toast task_submit_success = Toast.makeText(TaskNew.this ,"Task is successfully created", Toast.LENGTH_SHORT);
             task_submit_success.show();
         }
-        if (v.getId() == R.id.BLogout) {
+        if (v.getId() == R.id.btn_logout) {
             //logout and redirect to login oage which is main activity
             session.logoutUser();
         }
+    }
+
+    public static class TimePickerFragment extends DialogFragment
+            implements TimePickerDialog.OnTimeSetListener {
+
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            // Use the current time as the default values for the picker
+            final Calendar c = Calendar.getInstance();
+            int hour = c.get(Calendar.HOUR_OF_DAY);
+            int minute = c.get(Calendar.MINUTE);
+
+            // Create a new instance of TimePickerDialog and return it
+            return new TimePickerDialog(getActivity(), this, hour, minute,
+                    DateFormat.is24HourFormat(getActivity()));
+        }
+
+        public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+            // Do something with the time chosen by the user
+        }
+    }
+
+    public void showTimePickerDialog(View v) {
+        DialogFragment newFragment = new TimePickerFragment();
+        newFragment.show(getSupportFragmentManager(), "timePicker");
     }
 }
 

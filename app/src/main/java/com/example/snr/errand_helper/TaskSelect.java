@@ -1,19 +1,45 @@
 package com.example.snr.errand_helper;
 
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CursorAdapter;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 public class TaskSelect extends AppCompatActivity {
 
     UserSessionManager session;
+    ArrayList<Integer> taskList = new ArrayList<Integer>();
+    private ItemCursorAdapter cursorAdapter;
+    TaskDBHelper helper = new TaskDBHelper(this);
+
+    Task testTask = new Task();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_select);
+        ListView ls = (ListView)findViewById(R.id.lv_tasks);
+
+        testTask.setName("test");
+        testTask.setDesc("this is a test");
+        testTask.setType("Ride");
+
+        helper.insertTask(testTask);
+
+        String[] from = new String[]{"description","type"};
+        int[] to = new int[]{R.id.tv_task_description, R.id.tv_task_type};
+        cursorAdapter = new ItemCursorAdapter(this, R.layout.task_entry, helper.queryCursor(), from, to, CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER,helper);
+
+        ls.setAdapter(cursorAdapter);
+
         session = new UserSessionManager(getApplicationContext());
     }
 
@@ -41,7 +67,7 @@ public class TaskSelect extends AppCompatActivity {
 
 
     public void onButtonClick(View v) {
-        if (v.getId() == R.id.BLogout) {
+        if (v.getId() == R.id.btn_logout) {
             //logout and redirect to login oage which is main activity
             session.logoutUser();
         }

@@ -25,6 +25,7 @@ public class HomePage extends AppCompatActivity {
         tv.setText(username);
         onClickNewTaskButtonListner();
         onClickSelectTaskButtonListner();
+
     }
 
     public void onClickNewTaskButtonListner() {

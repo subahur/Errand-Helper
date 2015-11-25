@@ -23,10 +23,10 @@ public class SignUp extends Activity {
 
     public void onButtonClick(View v){
 
-        if(v.getId() == R.id.signUp){
-            EditText email = (EditText)findViewById(R.id.TFemail);
-            EditText password1 = (EditText)findViewById(R.id.TFpassword1);
-            EditText password2 = (EditText)findViewById(R.id.TFpassword2);
+        if(v.getId() == R.id.btn_signup){
+            EditText email = (EditText)findViewById(R.id.tf_email);
+            EditText password1 = (EditText)findViewById(R.id.tf_password_1);
+            EditText password2 = (EditText)findViewById(R.id.tf_password_2);
 
             //convert all to string values
             String emailstr = email.getText().toString();

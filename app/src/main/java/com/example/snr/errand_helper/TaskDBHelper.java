@@ -15,7 +15,7 @@ public class TaskDBHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "tasks.db";
     private static final String TABLE_NAME = "tasks";
     private static final String COLUMN_ID = "task_id";
-    private static final String COLUMN_NAME = "task_name";
+    private static final String COLUMN_NAME = "name";
     private static final String COLUMN_TYPE = "type";
     private static final String COLUMN_DESC = "description";
     private static final String COLUMN_CREATIONTIME = "creation_time";
@@ -65,7 +65,20 @@ public class TaskDBHelper extends SQLiteOpenHelper {
 //        values.put(COLUMN_DUETIME, dateFormat.format(t.getDueTime()));
 //        values.put(COLUMN_CREATIONTIME, dateFormat.format(t.getCreationTime()));
 
+        db.insert(TABLE_NAME, null, values);
+        db.close();
     }
+
+    public Cursor queryCursor() {
+        Cursor c = getReadableDatabase().rawQuery("select rowid _id,* from tasks", null);
+        return c;
+    }
+
+    public void deleteItem(int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_NAME,COLUMN_ID + " = " + Integer.toString(id),null);
+    }
+
     /**
      * Code from user database for reference - Leifeng
      *
