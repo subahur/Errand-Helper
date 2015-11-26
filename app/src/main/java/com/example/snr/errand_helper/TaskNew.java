@@ -54,11 +54,11 @@ public class TaskNew extends AppCompatActivity {
         //for now just create a pop up, later will create a entry in the table tasks
         if(v.getId() == R.id.btn_submit_task){
             EditText taskName = (EditText)findViewById(R.id.et_task_name);
-            EditText taskDesc = (EditText)findViewById(R.id.tf_task_desc);
+            EditText taskDesc = (EditText)findViewById(R.id.et_task_desc);
             Spinner taskType = (Spinner)findViewById(R.id.sp_task_type);
 
-            String taskNameStr = taskName.toString();
-            String taskDescStr = taskDesc.toString();
+            String taskNameStr = taskName.getText().toString();
+            String taskDescStr = taskDesc.getText().toString();
             String taskTypeStr = taskType.getSelectedItem().toString();
 
             Task t = new Task();
@@ -67,9 +67,7 @@ public class TaskNew extends AppCompatActivity {
             t.setType(taskTypeStr);
 
             helper.insertTask(t);
-
-            Toast task_submit_success = Toast.makeText(TaskNew.this ,"Task is successfully created", Toast.LENGTH_SHORT);
-            task_submit_success.show();
+            Toast.makeText(TaskNew.this, "Task \""+t.getName()+"\" has been created", Toast.LENGTH_SHORT).show();
         }
         if (v.getId() == R.id.btn_logout) {
             //logout and redirect to login oage which is main activity

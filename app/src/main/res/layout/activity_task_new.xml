@@ -68,7 +68,7 @@
     <EditText
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tf_task_desc"
+        android:id="@+id/et_task_desc"
         android:layout_centerVertical="true"
         android:layout_below="@id/tv_task_desc"
         android:layout_alignParentRight="true"
@@ -80,7 +80,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/pick_due_time"
         android:id="@+id/tv_pick_time"
-        android:layout_below="@id/tf_task_desc" />
+        android:layout_below="@id/et_task_desc" />
 
     <Button
         android:layout_width="wrap_content"

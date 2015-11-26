@@ -25,11 +25,10 @@ public class TaskSelect extends AppCompatActivity {
         setContentView(R.layout.activity_task_select);
         ListView ls = (ListView)findViewById(R.id.lv_tasks);
 
-        testTask.setName("test");
-        testTask.setDesc("this is a test");
-        testTask.setType("Ride");
-
-        helper.insertTask(testTask);
+//        testTask.setName("test");
+//        testTask.setDesc("this is a test");
+//        testTask.setType("Ride");
+//        helper.insertTask(testTask);
 
         String[] from = new String[]{"description","type"};
         int[] to = new int[]{R.id.tv_task_description, R.id.tv_task_type};

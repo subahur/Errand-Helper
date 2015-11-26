@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         if(v.getId() == R.id.btn_login)
         {
             //check if email and password are matching
-            EditText a = (EditText)findViewById(R.id.tf_email);
+            EditText a = (EditText)findViewById(R.id.et_email);
             String str = a.getText().toString();
 
             EditText b = (EditText)findViewById(R.id.tf_password);
