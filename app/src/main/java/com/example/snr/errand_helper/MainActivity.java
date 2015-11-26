@@ -13,7 +13,7 @@ import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
 
-    UserDBHelper helper = new UserDBHelper(this);
+    DatabaseHelper helper = new DatabaseHelper(this);
     UserSessionManager session;
 
     ///

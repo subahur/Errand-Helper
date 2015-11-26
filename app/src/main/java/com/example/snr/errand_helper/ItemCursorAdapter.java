@@ -8,9 +8,9 @@ import android.widget.SimpleCursorAdapter;
 
 public class ItemCursorAdapter extends SimpleCursorAdapter{
 
-    private TaskDBHelper helper;
+    private DatabaseHelper helper;
 
-    public ItemCursorAdapter (Context context, int layout, Cursor c, String[] from, int[] to, int flags, TaskDBHelper helper) {
+    public ItemCursorAdapter (Context context, int layout, Cursor c, String[] from, int[] to, int flags, DatabaseHelper helper) {
         super(context, layout,c, from, to, flags);
         this.helper = helper;
     }

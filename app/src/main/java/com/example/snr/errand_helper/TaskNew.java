@@ -19,7 +19,7 @@ import java.util.Calendar;
 public class TaskNew extends AppCompatActivity {
 
     UserSessionManager session;
-    TaskDBHelper helper = new TaskDBHelper(this);
+    DatabaseHelper helper = new DatabaseHelper(this);
     //
     @Override
     protected void onCreate(Bundle savedInstanceState) {

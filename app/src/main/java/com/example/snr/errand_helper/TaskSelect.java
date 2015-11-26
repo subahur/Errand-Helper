@@ -1,8 +1,5 @@
 package com.example.snr.errand_helper;
 
-import android.content.Context;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -18,7 +15,7 @@ public class TaskSelect extends AppCompatActivity {
     UserSessionManager session;
     ArrayList<Integer> taskList = new ArrayList<Integer>();
     private ItemCursorAdapter cursorAdapter;
-    TaskDBHelper helper = new TaskDBHelper(this);
+    DatabaseHelper helper = new DatabaseHelper(this);
 
     Task testTask = new Task();
 
