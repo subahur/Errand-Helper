@@ -33,7 +33,7 @@ public class HomePage extends AppCompatActivity {
         button_new_task_submit.setOnClickListener(
                 new View.OnClickListener() {
                     public void onClick(View w) {
-                        Intent intent = new Intent("com.example.snr.errand_helper.TaskNew");
+                        Intent intent = new Intent("com.example.snr.errand_helper.TaskCreate");
                         startActivity(intent);
                     }
                 }

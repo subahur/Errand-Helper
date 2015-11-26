@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         }
         if(v.getId() == R.id.btn_signup)
         {
-            Intent intent = new Intent(MainActivity.this, SignUp.class);
+            Intent intent = new Intent(MainActivity.this, UserCreate.class);
             startActivity(intent);
         }
     }

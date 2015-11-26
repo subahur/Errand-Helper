@@ -17,10 +17,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".TaskNew"
-            android:label="@string/title_activity_task_new" >
+            android:name=".TaskCreate"
+            android:label="@string/title_activity_task_create" >
             <intent-filter>
-                <action android:name="com.example.snr.errand_helper.TaskNew" />
+                <action android:name="com.example.snr.errand_helper.TaskCreate" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -43,7 +43,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignUp"
+        <activity android:name=".UserCreate"
             android:label="SignUp">
 
         </activity>

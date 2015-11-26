@@ -16,7 +16,7 @@ import android.widget.Toast;
 
 import java.util.Calendar;
 
-public class TaskNew extends AppCompatActivity {
+public class TaskCreate extends AppCompatActivity {
 
     UserSessionManager session;
     DatabaseHelper helper = new DatabaseHelper(this);
@@ -24,7 +24,7 @@ public class TaskNew extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_task_new);
+        setContentView(R.layout.activity_task_create);
         session = new UserSessionManager(getApplicationContext());
     }
 
@@ -67,7 +67,7 @@ public class TaskNew extends AppCompatActivity {
             t.setType(taskTypeStr);
 
             helper.insertTask(t);
-            Toast.makeText(TaskNew.this, "Task \""+t.getName()+"\" has been created", Toast.LENGTH_SHORT).show();
+            Toast.makeText(TaskCreate.this, "Task \""+t.getName()+"\" has been created", Toast.LENGTH_SHORT).show();
         }
         if (v.getId() == R.id.btn_logout) {
             //logout and redirect to login oage which is main activity

@@ -20,7 +20,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String USER_PASSWORD = "password";
 
     private static final String TASK_TABLE_NAME = "tasks";
-    private static final String TASK_ID = "task_id";
+    public static final String TASK_ID = "task_id"; // set public for deleting. just a test
     private static final String TASK_NAME = "name";
     private static final String TASK_TYPE = "type";
     private static final String TASK_DESC = "description";

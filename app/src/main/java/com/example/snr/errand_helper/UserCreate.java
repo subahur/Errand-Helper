@@ -9,14 +9,14 @@ import android.widget.Toast;
 /**
  * Created on 10/19/15.
  */
-public class SignUp extends Activity {
+public class UserCreate extends Activity {
 
     DatabaseHelper helper = new DatabaseHelper(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup);
+        setContentView(R.layout.activity_user_create);
     }
 
     //
@@ -35,7 +35,7 @@ public class SignUp extends Activity {
 
             if(!password1str.equals(password2str)){
                 //display error pop up
-                Toast check_password = Toast.makeText(SignUp.this ,"Passwords don't match", Toast.LENGTH_SHORT);
+                Toast check_password = Toast.makeText(UserCreate.this ,"Passwords don't match", Toast.LENGTH_SHORT);
                 check_password.show();
 
             }
@@ -46,7 +46,7 @@ public class SignUp extends Activity {
                 u.setPassword(password1str);
 
                 helper.insertUser(u);
-                Toast signup_success = Toast.makeText(SignUp.this ,"Sign up successful", Toast.LENGTH_SHORT);
+                Toast signup_success = Toast.makeText(UserCreate.this ,"Sign up successful", Toast.LENGTH_SHORT);
                 signup_success.show();
             }
         }

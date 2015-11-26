@@ -28,7 +28,7 @@
         android:layout_below="@id/tv_task_type"/>
 
     <Button
-        android:id="@+id/btn_edit"
+        android:id="@+id/btn_edit_item"
         android:text="@string/edit"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
