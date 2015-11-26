@@ -16,7 +16,7 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:onClick="onButtonClick"
-        android:backgroundTint="#cdd0ff" />
+        />
 
     <TextView
         android:layout_width="wrap_content"
@@ -26,7 +26,10 @@
         android:id="@+id/tv_email"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+
+       />
+
 
     <EditText
         android:layout_width="fill_parent"
@@ -34,7 +37,9 @@
         android:id="@+id/et_email"
         android:layout_below="@+id/tv_email"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:background="@drawable/back"/>
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -52,9 +57,10 @@
         android:inputType="textPassword"
         android:ems="10"
         android:id="@+id/tf_password"
-        android:layout_below="@+id/tv_password"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:background="@drawable/back"
+        android:layout_below="@+id/tv_password" />
 
     <Button
         android:layout_width="wrap_content"
