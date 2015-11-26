@@ -17,7 +17,6 @@ public class ItemCursorAdapter extends SimpleCursorAdapter{
 
     public View getView(final int position, final View convertView, ViewGroup parent) {
         View v = super.getView(position, convertView, parent);
-        helper.close();
 //        Button btn_del = (Button) v.findViewById(R.id.btn_delete);
 //        btn_del.setOnClickListener(new View.OnClickListener(){
 //            @Override
