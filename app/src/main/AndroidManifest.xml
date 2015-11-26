@@ -3,6 +3,7 @@
     package="com.example.snr.errand_helper" >
 
     <application
+
         android:allowBackup="true"
         android:icon="@drawable/appico1"
         android:label="@string/app_name"
