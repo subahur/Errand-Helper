@@ -24,7 +24,7 @@ public class ItemCursorAdapter extends SimpleCursorAdapter{
 //                Cursor cursor = (Cursor) getItem(position);
 //                int id = cursor.getInt(cursor.getColumnIndex(helper.COLUMN_ID));
 //                helper.deleteItem(id);
-//                cursor = helper.queryCursor();
+//                cursor = helper.taskQueryCursor();
 //                changeCursor(cursor);
 //            }
 //        });

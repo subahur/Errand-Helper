@@ -122,7 +122,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.delete(TASK_TABLE_NAME, TASK_ID + " = " + Integer.toString(id),null);
     }
 
-    public Cursor queryCursor() {
+    public Cursor taskQueryCursor() {
         Cursor c = getReadableDatabase().rawQuery("select rowid _id,* from tasks", null);
         return c;
     }
