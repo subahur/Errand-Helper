@@ -47,10 +47,21 @@
         android:layout_height="wrap_content"
         android:text="@string/signup"
         android:id="@+id/btn_signup"
-        android:layout_below="@+id/btn_login"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="59dp"
         android:onClick="onButtonClick"
-        android:backgroundTint="#cdd0ff" />
+        android:backgroundTint="#cdd0ff"
+        android:layout_below="@+id/btn_login"
+        android:layout_alignLeft="@+id/btn_login"
+        android:layout_alignStart="@+id/btn_login" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tutorial"
+        android:id="@+id/btutorial"
+        android:onClick="onButtonClick"
+        android:backgroundTint="#cdd0ff"
+        android:layout_below="@+id/btn_signup"
+        android:layout_centerHorizontal="true"
+        android:clickable="true" />
 
 </RelativeLayout>

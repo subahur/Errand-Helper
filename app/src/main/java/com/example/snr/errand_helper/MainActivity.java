@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -15,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     DatabaseHelper helper = new DatabaseHelper(this);
     UserSessionManager session;
-
+    public static Button button_new;
     ///
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
-
+        onClickTutorialButtonListner();
 
     }
 
@@ -80,6 +81,18 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, UserCreate.class);
             startActivity(intent);
         }
+    }
+
+    public void onClickTutorialButtonListner() {
+        button_new = (Button) findViewById(R.id.btutorial);
+        button_new.setOnClickListener(
+                new View.OnClickListener() {
+                    public void onClick(View w) {
+                        Intent intent = new Intent("com.example.snr.errand_helper.VideoTutorial");
+                        startActivity(intent);
+                    }
+                }
+        );
     }
 
     @Override

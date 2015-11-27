@@ -8,6 +8,7 @@
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="signup">Sign up</string>
+    <string name="tutorial">Tutorial</string>
     <string name="retypepass">Re-type Password</string>
     <string name="phone">Contact number</string>
     <string name="postnewtask">Post a new task</string>
@@ -34,4 +35,7 @@
     </string-array>
     <string name="title_activity_home_page">Home Page</string>
     <string name="emptyString" />
+    <string name="title_activity_video_tutorial">VideoTutorial</string>
+
+    <string name="hello_world">Hello world!</string>
 </resources>

@@ -53,6 +53,8 @@ public class HomePage extends AppCompatActivity {
         );
     }
 
+
+
     public void logOut(View v) {
         //if (v.getId() == R.id.BLogout) {
             //logout and redirect to login oage which is main activity
