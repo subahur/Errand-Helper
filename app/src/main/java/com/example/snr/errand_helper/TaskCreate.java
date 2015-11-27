@@ -54,10 +54,7 @@ public class TaskCreate extends AppCompatActivity {
             helper.insertTask(t);
             Toast.makeText(TaskCreate.this, "Task \""+t.getName()+"\" has been created", Toast.LENGTH_SHORT).show();
         }
-        if (v.getId() == R.id.btn_logout) {
-            //logout and redirect to login oage which is main activity
-            session.logoutUser();
-        }
+
     }
 
     public static class TimePickerFragment extends DialogFragment
