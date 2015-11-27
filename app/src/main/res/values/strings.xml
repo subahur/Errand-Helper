@@ -39,4 +39,5 @@
     <string name="title_activity_video_tutorial">VideoTutorial</string>
 
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_task_my">TaskMy</string>
 </resources>

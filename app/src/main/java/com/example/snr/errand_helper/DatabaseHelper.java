@@ -27,8 +27,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String TASK_DESC = "description";
     private static final String TASK_CREATIONTIME = "creation_time";
     private static final String TASK_DUETIME = "due_time";
-    private static final String TASK_CREATORID = "creator_id";
-    private static final String TASK_WORKERID = "worker_id";
+    private static final String TASK_CREATOREMAIL = "creator_email";
+    private static final String TASK_WORKEREMAIL = "worker_email";
     private static final String TASK_STATUS = "status";
 
     SQLiteDatabase db;
@@ -46,10 +46,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + TASK_DESC + " text not null,"
             + TASK_CREATIONTIME + " text not null," // not null, hasn't implemented yet
             + TASK_DUETIME + " date,"
-            + TASK_CREATORID + " text not null," // not null, hasn't implemented yet
-            + TASK_WORKERID + " integer,"
+            + TASK_CREATOREMAIL + " text not null," // not null, hasn't implemented yet
+            + TASK_WORKEREMAIL + " integer,"
             + TASK_STATUS + " text)"; // not null, hasn't implemented yet
-    //+ " foreign key (" + TASK_CREATORID + ") references users)"; not implemented yet. note the parenthesis!!
+//            + " foreign key (" + USER_EMAIL + ") references users)";
 
     public DatabaseHelper(Context context){
         super(context, DATABASE_NAME , null , DATABASE_VERSION);
@@ -113,7 +113,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(TASK_DESC, t.getDesc());
         values.put(TASK_TYPE, t.getType());
 //        values.put(TASK_STATUS, t.getStatus());
-        values.put(TASK_CREATORID, t.getCreator());
+        values.put(TASK_CREATOREMAIL, t.getCreator());
         //values.put(TASK_DUETIME, t.getDueTime());
         values.put(TASK_CREATIONTIME, t.getCreationTime());
 
@@ -127,6 +127,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public Cursor taskQueryCursor() {
         Cursor c = getReadableDatabase().rawQuery("select rowid _id,* from tasks", null);
+        return c;
+    }
+
+    public Cursor myTaskCursor (String email) {
+        Cursor c = getReadableDatabase().rawQuery("select * from tasks where creator_email = "+ email,null);
         return c;
     }
 
