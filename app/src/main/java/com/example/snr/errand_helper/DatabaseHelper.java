@@ -44,10 +44,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + TASK_NAME + " text not null,"
             + TASK_TYPE + " text not null,"
             + TASK_DESC + " text not null,"
-            + TASK_CREATIONTIME + " text not null," // not null, hasn't implemented yet
-            + TASK_DUETIME + " date,"
-            + TASK_CREATOREMAIL + " text not null," // not null, hasn't implemented yet
-            + TASK_WORKEREMAIL + " integer,"
+            + TASK_CREATIONTIME + " text not null,"
+            + TASK_DUETIME + " text,"
+            + TASK_CREATOREMAIL + " text not null,"
+            + TASK_WORKEREMAIL + " text,"
             + TASK_STATUS + " text)"; // not null, hasn't implemented yet
 //            + " foreign key (" + USER_EMAIL + ") references users)";
 

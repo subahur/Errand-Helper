@@ -6,14 +6,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.CursorAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.HashMap;
 
 public class TaskMy extends AppCompatActivity {
 
     UserSessionManager session;
-    private ItemCursorAdapter cursorAdapter;
+    private TaskEditCursorAdapter cursorAdapter;
     DatabaseHelper helper = new DatabaseHelper(this);
 
     @Override
@@ -28,7 +27,7 @@ public class TaskMy extends AppCompatActivity {
         ListView ls = (ListView)findViewById(R.id.lv_tasks);
         String[] from = new String[]{"name","description","type","creation_time","creator_email"};
         int[] to = new int[]{R.id.tv_task_name,R.id.tv_task_description, R.id.tv_task_type, R.id.tv_created_time, R.id.tv_task_creator};
-        cursorAdapter = new ItemCursorAdapter(this, R.layout.task_entry, helper.myTaskCursor(email), from, to, CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER,helper);
+        cursorAdapter = new TaskEditCursorAdapter(this, R.layout.task_edit_entry, helper.myTaskCursor(email), from, to, CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER,helper);
 
         ls.setAdapter(cursorAdapter);
 

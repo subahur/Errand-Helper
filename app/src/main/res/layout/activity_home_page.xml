@@ -11,14 +11,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btn_post_task"
-        android:text="@string/post_task"
+        android:text="@string/create_task"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/browse_task"
+        android:text="@string/select_task"
         android:id="@+id/btn_browse_task"
         android:layout_below="@+id/btn_post_task"
         android:layout_alignLeft="@+id/btn_post_task"

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Errand-Helper</string>
-    <string name="post_task">Post task</string>
-    <string name="browse_task">Browse task</string>
+    <string name="create_task">Create a task</string>
+    <string name="select_task">Select a task</string>
     <string name="my_task">My task</string>
     <string name="welcome">Welcome to ErrandHelper, </string>
     <string name="logout">Logout</string>

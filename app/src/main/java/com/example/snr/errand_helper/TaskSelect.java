@@ -4,18 +4,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.CursorAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class TaskSelect extends AppCompatActivity {
 
     UserSessionManager session;
-    private ItemCursorAdapter cursorAdapter;
+    private TaskSelectCursorAdapter cursorAdapter;
     DatabaseHelper helper = new DatabaseHelper(this);
 
     @Override
@@ -30,7 +27,7 @@ public class TaskSelect extends AppCompatActivity {
         ListView ls = (ListView)findViewById(R.id.lv_tasks);
         String[] from = new String[]{"name","description","type","creation_time","creator_email"};
         int[] to = new int[]{R.id.tv_task_name,R.id.tv_task_description, R.id.tv_task_type, R.id.tv_created_time, R.id.tv_task_creator};
-        cursorAdapter = new ItemCursorAdapter(this, R.layout.task_entry, helper.otherTaskCursor(email), from, to, CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER,helper);
+        cursorAdapter = new TaskSelectCursorAdapter(this, R.layout.task_select_entry, helper.otherTaskCursor(email), from, to, CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER,helper);
 
         ls.setAdapter(cursorAdapter);
 
