@@ -24,7 +24,6 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/taskname"
         android:id="@+id/tv_task_name"
-        android:layout_below="@+id/btn_logout"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -91,16 +90,6 @@
         android:id="@+id/btn_submit_task"
         android:layout_below="@+id/btn_pick_time"
         android:layout_centerHorizontal="true"
-        android:onClick="onButtonClick" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/logout"
-        android:id="@+id/btn_logout"
-        android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/tv_post_new_task"
-        android:layout_alignEnd="@+id/tv_post_new_task"
         android:onClick="onButtonClick" />
 
     <Button

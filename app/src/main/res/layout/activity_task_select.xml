@@ -21,18 +21,7 @@
     <ListView
         android:id="@+id/lv_tasks"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_below="@+id/btn_logout">
+        android:layout_width="match_parent">
     </ListView>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Logout"
-        android:id="@+id/btn_logout"
-        android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/tv_select_task"
-        android:layout_alignEnd="@+id/tv_select_task"
-        android:onClick="onButtonClick" />
 
 </RelativeLayout>

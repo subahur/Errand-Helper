@@ -51,15 +51,5 @@
         android:layout_toEndOf="@+id/welcom"
         android:text="@string/emptyString" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/logout"
-        android:id="@+id/btn_logout"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:onClick="logOut" />
-
 
 </RelativeLayout>
