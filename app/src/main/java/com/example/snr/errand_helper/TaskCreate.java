@@ -35,10 +35,12 @@ public class TaskCreate extends AppCompatActivity {
         if(v.getId() == R.id.btn_submit_task){
             EditText taskName = (EditText)findViewById(R.id.et_task_name);
             EditText taskDesc = (EditText)findViewById(R.id.et_task_desc);
+            EditText dueDate = (EditText)findViewById(R.id.et_due_date);
             Spinner taskType = (Spinner)findViewById(R.id.sp_task_type);
 
             String taskNameStr = taskName.getText().toString();
             String taskDescStr = taskDesc.getText().toString();
+            String dueDateStr = dueDate.getText().toString();
             String taskTypeStr = taskType.getSelectedItem().toString();
 
             HashMap<String, String> user = session.getUserInfo();
@@ -48,6 +50,7 @@ public class TaskCreate extends AppCompatActivity {
             t.setName(taskNameStr);
             t.setDesc(taskDescStr);
             t.setType(taskTypeStr);
+            t.setDueTime(dueDateStr);
             t.setCreator(str);
 
 

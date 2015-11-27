@@ -10,8 +10,7 @@ import java.util.Date;
  */
 public class Task {
 
-    private String name, type, description, status, creatorID,creationTime;
-    private Date dueTime;
+    private String name, type, description, status, creatorID,creationTime,dueTime;
     private int taskID, workerID;
 
     public Task() {
@@ -23,11 +22,11 @@ public class Task {
         return this.creationTime;
     }
 
-    public void setDueTime(Date due) {
+    public void setDueTime(String due) {
         this.dueTime = due;
     }
 
-    public Date getDueTime() {
+    public String getDueTime() {
         return this.dueTime;
     }
 
