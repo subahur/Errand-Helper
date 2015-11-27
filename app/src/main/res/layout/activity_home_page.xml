@@ -10,19 +10,28 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/BTasker"
-        android:text="@string/tasker"
+        android:id="@+id/btn_post_task"
+        android:text="@string/post_task"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/worker"
-        android:id="@+id/BWorker"
-        android:layout_below="@+id/BTasker"
-        android:layout_alignLeft="@+id/BTasker"
-        android:layout_alignStart="@+id/BTasker" />
+        android:text="@string/browse_task"
+        android:id="@+id/btn_browse_task"
+        android:layout_below="@+id/btn_post_task"
+        android:layout_alignLeft="@+id/btn_post_task"
+        android:layout_alignStart="@+id/btn_post_task" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/my_task"
+        android:id="@+id/btn_my_task"
+        android:layout_below="@+id/btn_browse_task"
+        android:layout_alignLeft="@+id/btn_post_task"
+        android:layout_alignStart="@+id/btn_post_task"/>
 
     <TextView
         android:layout_width="wrap_content"

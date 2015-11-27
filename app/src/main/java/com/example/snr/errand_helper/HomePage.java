@@ -29,7 +29,7 @@ public class HomePage extends AppCompatActivity {
     }
 
     public void onClickNewTaskButtonListner() {
-        button_new_task_submit = (Button) findViewById(R.id.BTasker);
+        button_new_task_submit = (Button) findViewById(R.id.btn_post_task);
         button_new_task_submit.setOnClickListener(
                 new View.OnClickListener() {
                     public void onClick(View w) {
@@ -41,16 +41,20 @@ public class HomePage extends AppCompatActivity {
     }
 
     public void onClickSelectTaskButtonListner() {
-        button_new_task_submit = (Button) findViewById(R.id.BWorker);
+        button_new_task_submit = (Button) findViewById(R.id.btn_browse_task);
         button_new_task_submit.setOnClickListener(
                 new View.OnClickListener() {
-
                     public void onClick(View w) {
                         Intent intent = new Intent("com.example.snr.errand_helper.TaskSelect");
                         startActivity(intent);
                     }
                 }
         );
+    }
+
+    public void onClickMyTaskButtonListner() {
+        button_new_task_submit = (Button) findViewById(R.id.btn_my_task);
+
     }
 
 
