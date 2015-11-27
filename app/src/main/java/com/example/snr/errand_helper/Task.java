@@ -2,6 +2,7 @@ package com.example.snr.errand_helper;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -9,8 +10,7 @@ import java.util.Date;
  */
 public class Task {
 
-    private String name, type, description, status, creatorEmail,creationTime;
-    private Date dueTime;
+    private String name, type, description, status, creatorID,creationTime,dueTime;
     private int taskID, workerID;
 
     public Task() {
@@ -22,11 +22,11 @@ public class Task {
         return this.creationTime;
     }
 
-    public void setDueTime(Date due) {
+    public void setDueTime(String due) {
         this.dueTime = due;
     }
 
-    public Date getDueTime() {
+    public String getDueTime() {
         return this.dueTime;
     }
 
@@ -38,12 +38,12 @@ public class Task {
         return this.taskID;
     }
 
-    public void setCreator(String creatorEmail){
-        this.creatorEmail = creatorEmail;
+    public void setCreator(String creatorID){
+        this.creatorID = creatorID;
     }
 
     public String getCreator(){
-        return this.creatorEmail;
+        return this.creatorID;
     }
 
     public void setWorker(int workerID){
