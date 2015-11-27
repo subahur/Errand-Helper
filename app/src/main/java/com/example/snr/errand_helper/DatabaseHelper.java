@@ -12,7 +12,7 @@ import java.text.SimpleDateFormat;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 1;
-    private static final String DATABASE_NAME = "errandHelper1.db";
+    private static final String DATABASE_NAME = "errandHelper9.db";
 
     private static final String USER_TABLE_NAME = "users";
     private static final String USER_ID = "user_id";
@@ -44,9 +44,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + TASK_NAME + " text not null,"
             + TASK_TYPE + " text not null,"
             + TASK_DESC + " text not null,"
-            + TASK_CREATIONTIME + " date," // not null, hasn't implemented yet
+            + TASK_CREATIONTIME + " text not null," // not null, hasn't implemented yet
             + TASK_DUETIME + " date,"
-            + TASK_CREATORID + " integer," // not null, hasn't implemented yet
+            + TASK_CREATORID + " text not null," // not null, hasn't implemented yet
             + TASK_WORKERID + " integer,"
             + TASK_STATUS + " text)"; // not null, hasn't implemented yet
     //+ " foreign key (" + TASK_CREATORID + ") references users)"; not implemented yet. note the parenthesis!!
@@ -113,9 +113,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(TASK_DESC, t.getDesc());
         values.put(TASK_TYPE, t.getType());
 //        values.put(TASK_STATUS, t.getStatus());
-//        values.put(TASK_CREATORID, t.getCreator());
-//        values.put(TASK_DUETIME, dateFormat.format(t.getDueTime()));
-//        values.put(TASK_CREATIONTIME, dateFormat.format(t.getCreationTime()));
+        values.put(TASK_CREATORID, t.getCreator());
+        //values.put(TASK_DUETIME, t.getDueTime());
+        values.put(TASK_CREATIONTIME, t.getCreationTime());
 
         db.insert(TASK_TABLE_NAME, null, values);
     }

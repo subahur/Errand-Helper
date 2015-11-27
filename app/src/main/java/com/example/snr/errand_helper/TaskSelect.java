@@ -30,8 +30,8 @@ public class TaskSelect extends AppCompatActivity {
 //        testTask.setType("Ride");
 //        helper.insertTask(testTask);
 
-        String[] from = new String[]{"name","description","type"};
-        int[] to = new int[]{R.id.tv_task_name,R.id.tv_task_description, R.id.tv_task_type};
+        String[] from = new String[]{"name","description","type","creation_time","creator_id"};
+        int[] to = new int[]{R.id.tv_task_name,R.id.tv_task_description, R.id.tv_task_type, R.id.tv_created_time, R.id.tv_task_creator};
         cursorAdapter = new ItemCursorAdapter(this, R.layout.task_entry, helper.taskQueryCursor(), from, to, CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER,helper);
 
         ls.setAdapter(cursorAdapter);

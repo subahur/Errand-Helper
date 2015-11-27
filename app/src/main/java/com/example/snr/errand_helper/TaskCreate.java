@@ -15,6 +15,7 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import java.util.Calendar;
+import java.util.HashMap;
 
 public class TaskCreate extends AppCompatActivity {
 
@@ -61,10 +62,15 @@ public class TaskCreate extends AppCompatActivity {
             String taskDescStr = taskDesc.getText().toString();
             String taskTypeStr = taskType.getSelectedItem().toString();
 
+            HashMap<String, String> user = session.getUserInfo();
+            String str = user.get(UserSessionManager.KEY_EMAIL);
+
             Task t = new Task();
             t.setName(taskNameStr);
             t.setDesc(taskDescStr);
             t.setType(taskTypeStr);
+            t.setCreator(str);
+
 
             helper.insertTask(t);
             Toast.makeText(TaskCreate.this, "Task \""+t.getName()+"\" has been created", Toast.LENGTH_SHORT).show();

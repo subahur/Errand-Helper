@@ -1,5 +1,7 @@
 package com.example.snr.errand_helper;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -8,15 +10,16 @@ import java.util.Date;
  */
 public class Task {
 
-    private String name, type, description, status;
-    private Date creationTime, dueTime;
-    private int taskID, creatorID, workerID;
+    private String name, type, description, status, creatorID,creationTime;
+    private Date dueTime;
+    private int taskID, workerID;
 
     public Task() {
-        this.creationTime = Calendar.getInstance().getTime();
+        DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss yyyy/MM/dd ");//create a format of date
+        this.creationTime = dateFormat.format(new Date());//add the time and date when the object is created or initialized
     }
 
-    public Date getCreationTime() {
+    public String getCreationTime() {
         return this.creationTime;
     }
 
@@ -36,11 +39,11 @@ public class Task {
         return this.taskID;
     }
 
-    public void setCreator(int creatorID){
+    public void setCreator(String creatorID){
         this.creatorID = creatorID;
     }
 
-    public int getCreator(){
+    public String getCreator(){
         return this.creatorID;
     }
 
