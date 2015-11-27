@@ -11,7 +11,7 @@ import android.widget.VideoView;
 
 public class VideoTutorial extends Activity {
 
-    private static final String TUTORIAL_URL = "http://webbie.org/youtube/skeleton.mp4";
+    private static final String TUTORIAL_URL = "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4";
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
