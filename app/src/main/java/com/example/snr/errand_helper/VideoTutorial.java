@@ -16,13 +16,13 @@ public class VideoTutorial extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video_tutorial);
-
-        VideoView vid = (VideoView) findViewById(R.id.videoView);
-        Uri video = Uri.parse(TUTORIAL_URL);
-        vid.setMediaController(new MediaController(this));
-        vid.setVideoURI(video);
-        vid.start();
-        vid.requestFocus();
+        VideoView vidView = (VideoView)findViewById(R.id.myVideo);
+        Uri vidUri = Uri.parse(TUTORIAL_URL);
+        vidView.setVideoURI(vidUri);
+        MediaController vidControl = new MediaController(this);
+        vidControl.setAnchorView(vidView);
+        vidView.setMediaController(vidControl);
+        vidView.start();
 
     }
 
