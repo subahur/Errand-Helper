@@ -9,6 +9,7 @@
     <string name="password">Password</string>
     <string name="signup">Sign up</string>
     <string name="retypepass">Re-type Password</string>
+    <string name="phone">Contact number</string>
     <string name="postnewtask">Post a new task</string>
     <string name="taskdescription">Task Description</string>
     <string name="tasktype">Task Type</string>

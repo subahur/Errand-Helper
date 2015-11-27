@@ -12,12 +12,13 @@ import java.text.SimpleDateFormat;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 1;
-    private static final String DATABASE_NAME = "errandHelper.db";
+    private static final String DATABASE_NAME = "errandHelper1.db";
 
     private static final String USER_TABLE_NAME = "users";
     private static final String USER_ID = "user_id";
     private static final String USER_EMAIL = "email";
     private static final String USER_PASSWORD = "password";
+    private static final String USER_PHONE = "phone";
 
     private static final String TASK_TABLE_NAME = "tasks";
     public static final String TASK_ID = "task_id"; // set public for deleting. just a test
@@ -27,7 +28,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String TASK_CREATIONTIME = "creation_time";
     private static final String TASK_DUETIME = "due_time";
     private static final String TASK_CREATORID = "creator_id";
-    private static final String TASK_WORKERID = "woker_id";
+    private static final String TASK_WORKERID = "worker_id";
     private static final String TASK_STATUS = "status";
 
     SQLiteDatabase db;
@@ -35,7 +36,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String CREATE_USER_TABLE = "create table " + USER_TABLE_NAME + " ("
             + USER_ID + " integer primary key not null,"
             + USER_EMAIL + " text not null,"
-            + USER_PASSWORD + " text not null)";
+            + USER_PASSWORD + " text not null,"
+            + USER_PHONE + " text not null)";
 
     private static final String CREATE_TASK_TABLE = "create table " + TASK_TABLE_NAME +" ("
             + TASK_ID + " integer primary key not null, "
@@ -71,6 +73,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         u.setUserID(count);
         values.put(USER_EMAIL, u.getEmail());
         values.put(USER_PASSWORD, u.getPassword());
+        values.put(USER_PHONE, u.getPhone());
         db.insert(USER_TABLE_NAME, null, values);
         db.close();
     }

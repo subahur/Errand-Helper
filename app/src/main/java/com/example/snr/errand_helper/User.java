@@ -3,7 +3,7 @@ package com.example.snr.errand_helper;
 
 public class User  {
 
-    private String email, password;
+    private String email, password, phone;
 
     int userID;
 
@@ -30,4 +30,14 @@ public class User  {
     public int getUserID(){
         return this.userID;
     }
+
+    public void setPhone(String phone){
+        this.phone = phone;
+    }
+
+    public String getPhone(){
+        return this.phone;
+    }
+
+
 }
