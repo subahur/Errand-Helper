@@ -39,11 +39,33 @@ public class TaskSelect extends AppCompatActivity {
         session = new UserSessionManager(getApplicationContext());
     }
 
-    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_home_page, menu);
+        //getMenuInflater().inflate(R.menu.menu_main, menu);
+        super.onCreateOptionsMenu(menu);
+        CreateMenu(menu);
         return true;
+    }
+
+    //creates menu option
+    private void CreateMenu(Menu menu){
+        menu.setQwertyMode(true);
+        MenuItem mu1 = menu.add(0,0,0,"Logout");//send item id to 0 if Add isclicked
+        {
+            mu1.setAlphabeticShortcut('a');
+            //mu1.setIcon(R.drawable.ic_launcher);
+        }
+    }
+
+    //handles events when options menu is clicked
+    private boolean MenuChoice(MenuItem item) {
+        switch (item.getItemId()) {
+            case 0://if add is pressed
+                session.logoutUser();
+                return true;
+            default:
+                return false;
+        }
     }
 
     @Override
@@ -51,21 +73,14 @@ public class TaskSelect extends AppCompatActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        //int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+        // if (id == R.id.action_settings) {
+        //    return true;
+        //}
 
-        return super.onOptionsItemSelected(item);
-    }
-
-
-    public void onButtonClick(View v) {
-        if (v.getId() == R.id.btn_logout) {
-            //logout and redirect to login oage which is main activity
-            session.logoutUser();
-        }
+        // return super.onOptionsItemSelected(item);
+        return MenuChoice(item);
     }
 }
