@@ -7,8 +7,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.CursorAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class TaskSelect extends AppCompatActivity {
 
@@ -21,10 +23,14 @@ public class TaskSelect extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_select);
 
+        session = new UserSessionManager(getApplicationContext());
+        HashMap<String, String> user = session.getUserInfo();
+        String email = user.get(UserSessionManager.KEY_EMAIL);
+
         ListView ls = (ListView)findViewById(R.id.lv_tasks);
-        String[] from = new String[]{"name","description","type","creation_time","creator_id"};
+        String[] from = new String[]{"name","description","type","creation_time","creator_email"};
         int[] to = new int[]{R.id.tv_task_name,R.id.tv_task_description, R.id.tv_task_type, R.id.tv_created_time, R.id.tv_task_creator};
-        cursorAdapter = new ItemCursorAdapter(this, R.layout.task_entry, helper.taskQueryCursor(), from, to, CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER,helper);
+        cursorAdapter = new ItemCursorAdapter(this, R.layout.task_entry, helper.otherTaskCursor(email), from, to, CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER,helper);
 
         ls.setAdapter(cursorAdapter);
 

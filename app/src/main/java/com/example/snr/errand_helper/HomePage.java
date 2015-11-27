@@ -25,6 +25,7 @@ public class HomePage extends AppCompatActivity {
         tv.setText(username);
         onClickNewTaskButtonListner();
         onClickSelectTaskButtonListner();
+        onClickMyTaskButtonListner();
 
     }
 
@@ -54,6 +55,14 @@ public class HomePage extends AppCompatActivity {
 
     public void onClickMyTaskButtonListner() {
         button_new_task_submit = (Button) findViewById(R.id.btn_my_task);
+        button_new_task_submit.setOnClickListener(
+                new View.OnClickListener() {
+                    public void onClick(View w) {
+                        Intent intent = new Intent("com.example.snr.errand_helper.TaskMy");
+                        startActivity(intent);
+                    }
+                }
+        );
 
     }
 

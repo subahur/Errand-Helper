@@ -29,7 +29,6 @@ public class TaskCreate extends AppCompatActivity {
         session = new UserSessionManager(getApplicationContext());
     }
 
-
     public void onButtonClick(View v){
         //for now just create a pop up, later will create a entry in the table tasks
         if(v.getId() == R.id.btn_submit_task){

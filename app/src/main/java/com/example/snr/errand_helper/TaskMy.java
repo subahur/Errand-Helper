@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.CursorAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.HashMap;
 
@@ -14,18 +15,20 @@ public class TaskMy extends AppCompatActivity {
     UserSessionManager session;
     private ItemCursorAdapter cursorAdapter;
     DatabaseHelper helper = new DatabaseHelper(this);
-    HashMap<String, String> user = session.getUserInfo();
-    String user_email = user.get(UserSessionManager.KEY_EMAIL);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_my);
 
+        session = new UserSessionManager(getApplicationContext());
+        HashMap<String, String> user = session.getUserInfo();
+        String email = user.get(UserSessionManager.KEY_EMAIL);
+
         ListView ls = (ListView)findViewById(R.id.lv_tasks);
-        String[] from = new String[]{"name","description","type","creation_time","creator_id"};
+        String[] from = new String[]{"name","description","type","creation_time","creator_email"};
         int[] to = new int[]{R.id.tv_task_name,R.id.tv_task_description, R.id.tv_task_type, R.id.tv_created_time, R.id.tv_task_creator};
-        cursorAdapter = new ItemCursorAdapter(this, R.layout.task_entry, helper.myTaskCursor(user_email), from, to, CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER,helper);
+        cursorAdapter = new ItemCursorAdapter(this, R.layout.task_entry, helper.myTaskCursor(email), from, to, CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER,helper);
 
         ls.setAdapter(cursorAdapter);
 

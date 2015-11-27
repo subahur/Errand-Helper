@@ -61,6 +61,11 @@
         <activity
             android:name=".TaskMy"
             android:label="@string/title_activity_task_my" >
+            <intent-filter>
+                <action android:name="com.example.snr.errand_helper.TaskMy" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
     </application>
 
