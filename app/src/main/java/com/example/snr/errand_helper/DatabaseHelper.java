@@ -116,6 +116,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(TASK_CREATOREMAIL, t.getCreator());
         //values.put(TASK_DUETIME, t.getDueTime());
         values.put(TASK_CREATIONTIME, t.getCreationTime());
+        values.put(TASK_STATUS, t.getStatus());
 
         db.insert(TASK_TABLE_NAME, null, values);
     }
@@ -123,6 +124,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void deleteTask(int id) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TASK_TABLE_NAME, TASK_ID + " = " + Integer.toString(id),null);
+    }
+
+    public void updateWorker(String email, int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(TASK_WORKEREMAIL, email);
+        values.put(TASK_STATUS, "picked");
+//        values.put(TASK_ID, Integer.toString(id));
+        db.update(TASK_TABLE_NAME, values,TASK_ID + " = '" + Integer.toString(id) + "'",null);
     }
 
     public Cursor taskQueryCursor() {
@@ -138,7 +148,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     // return tasks created by users other than with this email
     public Cursor otherTaskCursor (String email) {
-        Cursor c = getReadableDatabase().rawQuery("select rowid _id, * from tasks where creator_email != \'" + email + "\'", null);
+        Cursor c = getReadableDatabase().rawQuery("select rowid _id, * from tasks where creator_email != '" + email + "' and status = 'available'", null);
         return c;
     }
 

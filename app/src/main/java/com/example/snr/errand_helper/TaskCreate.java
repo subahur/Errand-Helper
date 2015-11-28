@@ -55,6 +55,7 @@ public class TaskCreate extends AppCompatActivity {
             t.setType(taskTypeStr);
             t.setDueTime(dueDateStr);
             t.setCreator(str);
+            t.setStatus("available");
 
 
             helper.insertTask(t);
