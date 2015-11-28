@@ -14,19 +14,22 @@
         android:id="@+id/btn_login"
         android:text="@string/login"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
         android:onClick="onButtonClick"
-        />
+        android:layout_alignLeft="@+id/btn_signup"
+        android:layout_alignStart="@+id/btn_signup"
+        android:layout_alignRight="@+id/btn_signup"
+        android:layout_alignEnd="@+id/btn_signup" />
 
 
     <EditText
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/et_email"
-        android:layout_below="@+id/tv_email"
+        android:hint = "Email"
+        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:hint = "Email" />
+        android:layout_marginTop="44dp" />
 
 
 
@@ -40,7 +43,8 @@
         android:hint = "Password"
         android:layout_below="@+id/et_email"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="53dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -50,8 +54,10 @@
         android:onClick="onButtonClick"
         android:backgroundTint="#cdd0ff"
         android:layout_below="@+id/btn_login"
-        android:layout_alignLeft="@+id/btn_login"
-        android:layout_alignStart="@+id/btn_login" />
+        android:layout_alignRight="@+id/btutorial"
+        android:layout_alignEnd="@+id/btutorial"
+        android:layout_alignLeft="@+id/btutorial"
+        android:layout_alignStart="@+id/btutorial" />
 
     <Button
         android:layout_width="wrap_content"

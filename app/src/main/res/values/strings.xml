@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Errand-Helper</string>
     <string name="create_task">Create a task</string>
-    <string name="select_task">Select a task</string>
-    <string name="my_task">My task</string>
+    <string name="select_task">Do a task</string>
+    <string name="my_task">My tasks</string>
     <string name="welcome">Welcome to ErrandHelper, </string>
     <string name="logout">Logout</string>
     <string name="login">Login</string>
@@ -17,13 +17,13 @@
     <string name="tasktype">Task Type</string>
     <string name="taskname">Task Name</string>
     <string name="submittask">Submit</string>
-    <string name="selecttask">Select a Task</string>
+    <string name="selecttask">Do a Task</string>
     <string name="exampletask">Example Task</string>
     <string name="action_settings">Settings</string>
     <string name="delete">Delete</string>
     <string name="edit">Edit</string>
     <string name="title_activity_task_create">Create a task</string>
-    <string name="title_activity_task_select">Select a task</string>
+    <string name="title_activity_task_select">Do a task</string>
     <string name="pick_due_time">Pick a due time</string>
 
 

@@ -12,7 +12,7 @@ import java.text.SimpleDateFormat;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 1;
-    private static final String DATABASE_NAME = "errandHelper9.db";
+    private static final String DATABASE_NAME = "errandHelper10.db";
 
     private static final String USER_TABLE_NAME = "users";
     private static final String USER_ID = "user_id";

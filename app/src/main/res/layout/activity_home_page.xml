@@ -22,7 +22,9 @@
         android:id="@+id/btn_browse_task"
         android:layout_below="@+id/btn_post_task"
         android:layout_alignLeft="@+id/btn_post_task"
-        android:layout_alignStart="@+id/btn_post_task" />
+        android:layout_alignStart="@+id/btn_post_task"
+        android:layout_alignRight="@+id/btn_post_task"
+        android:layout_alignEnd="@+id/btn_post_task" />
 
     <Button
         android:layout_width="wrap_content"
@@ -31,7 +33,9 @@
         android:id="@+id/btn_my_task"
         android:layout_below="@+id/btn_browse_task"
         android:layout_alignLeft="@+id/btn_post_task"
-        android:layout_alignStart="@+id/btn_post_task"/>
+        android:layout_alignStart="@+id/btn_post_task"
+        android:layout_alignRight="@+id/btn_browse_task"
+        android:layout_alignEnd="@+id/btn_browse_task" />
 
     <TextView
         android:layout_width="wrap_content"
