@@ -114,7 +114,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(TASK_TYPE, t.getType());
 //        values.put(TASK_STATUS, t.getStatus());
         values.put(TASK_CREATOREMAIL, t.getCreator());
-        //values.put(TASK_DUETIME, t.getDueTime());
+        values.put(TASK_DUETIME, t.getDueTime());
         values.put(TASK_CREATIONTIME, t.getCreationTime());
         values.put(TASK_STATUS, t.getStatus());
 
