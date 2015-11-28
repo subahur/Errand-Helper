@@ -102,7 +102,9 @@
         android:id="@+id/btn_select_task"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignLeft="@+id/btnPhone"
+        android:layout_alignStart="@+id/btnPhone" />
 
     <TextView
         android:id="@+id/tv_due_date"
@@ -128,6 +130,7 @@
         android:id="@+id/btnPhone"
         android:layout_alignBottom="@+id/tv_due_date"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:text="    No number    " />
 
 </RelativeLayout>
