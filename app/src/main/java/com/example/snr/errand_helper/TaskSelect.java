@@ -25,8 +25,8 @@ public class TaskSelect extends AppCompatActivity {
         String email = user.get(UserSessionManager.KEY_EMAIL);
 
         ListView ls = (ListView)findViewById(R.id.lv_tasks);
-        String[] from = new String[]{"name","description","type","creation_time","creator_email"};
-        int[] to = new int[]{R.id.tv_task_name,R.id.tv_task_description, R.id.tv_task_type, R.id.tv_created_time, R.id.tv_task_creator};
+        String[] from = new String[]{"name","description","type","creation_time","creator_email","due_time"};
+        int[] to = new int[]{R.id.tv_task_name,R.id.tv_task_description, R.id.tv_task_type, R.id.tv_created_time, R.id.tv_task_creator, R.id.tv_due_date};
         cursorAdapter = new TaskSelectCursorAdapter(this, R.layout.task_select_entry, helper.otherTaskCursor(email), from, to, CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER,helper, email);
 
         ls.setAdapter(cursorAdapter);
