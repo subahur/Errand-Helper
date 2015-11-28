@@ -1,6 +1,7 @@
 package com.example.snr.errand_helper;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -50,6 +51,11 @@ public class UserCreate extends Activity {
                 helper.insertUser(u);
                 Toast signup_success = Toast.makeText(UserCreate.this ,"Sign up successful", Toast.LENGTH_SHORT);
                 signup_success.show();
+                UserSessionManager session = new UserSessionManager(getApplicationContext());
+                session.createSession(emailstr);
+                Intent intent = new Intent(this,HomePage.class);
+                intent.putExtra("Username",emailstr);
+                startActivity(intent);
             }
         }
 

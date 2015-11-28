@@ -1,6 +1,7 @@
 package com.example.snr.errand_helper;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.support.v4.app.DialogFragment;
 import android.app.TimePickerDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -21,16 +22,19 @@ public class TaskCreate extends AppCompatActivity {
 
     UserSessionManager session;
     DatabaseHelper helper = new DatabaseHelper(this);
+    String currentUserEmail;
     //
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_create);
         session = new UserSessionManager(getApplicationContext());
+
+        HashMap<String, String> user = session.getUserInfo();
+        currentUserEmail = user.get(UserSessionManager.KEY_EMAIL);
     }
 
     public void onButtonClick(View v){
-        //for now just create a pop up, later will create a entry in the table tasks
         if(v.getId() == R.id.btn_submit_task){
             EditText taskName = (EditText)findViewById(R.id.et_task_name);
             EditText taskDesc = (EditText)findViewById(R.id.et_task_desc);
@@ -55,6 +59,10 @@ public class TaskCreate extends AppCompatActivity {
 
             helper.insertTask(t);
             Toast.makeText(TaskCreate.this, "Task \""+t.getName()+"\" has been created", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this,HomePage.class);
+            intent.putExtra("Username", currentUserEmail);
+            session.createSession(currentUserEmail);
+            startActivity(intent);
         }
 
     }
