@@ -1,5 +1,6 @@
 package com.example.snr.errand_helper;
 
+import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -24,9 +25,10 @@ public class TaskSelect extends AppCompatActivity {
         HashMap<String, String> user = session.getUserInfo();
         String email = user.get(UserSessionManager.KEY_EMAIL);
 
+
         ListView ls = (ListView)findViewById(R.id.lv_tasks);
-        String[] from = new String[]{"name","description","type","creation_time","creator_email","due_time"};
-        int[] to = new int[]{R.id.tv_task_name,R.id.tv_task_description, R.id.tv_task_type, R.id.tv_created_time, R.id.tv_task_creator, R.id.tv_due_date};
+        String[] from = new String[]{"name","description","type","creation_time","creator_email","due_time","creator_phone"};
+        int[] to = new int[]{R.id.tv_task_name,R.id.tv_task_description, R.id.tv_task_type, R.id.tv_created_time, R.id.tv_task_creator, R.id.tv_due_date, R.id.btnPhone};
         cursorAdapter = new TaskSelectCursorAdapter(this, R.layout.task_select_entry, helper.otherTaskCursor(email), from, to, CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER,helper, email);
 
         ls.setAdapter(cursorAdapter);

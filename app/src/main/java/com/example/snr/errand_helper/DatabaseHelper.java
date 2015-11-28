@@ -12,13 +12,15 @@ import java.text.SimpleDateFormat;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 1;
-    private static final String DATABASE_NAME = "errandHelper10.db";
+    private static final String DATABASE_NAME = "errandHelper11.db";
 
     private static final String USER_TABLE_NAME = "users";
     private static final String USER_ID = "user_id";
     private static final String USER_EMAIL = "email";
     private static final String USER_PASSWORD = "password";
     private static final String USER_PHONE = "phone";
+
+    public static final String[] ALL_KEYS = new String[] {USER_ID, USER_EMAIL, USER_PASSWORD, USER_PHONE};
 
     private static final String TASK_TABLE_NAME = "tasks";
     public static final String TASK_ID = "task_id"; // set public for deleting. just a test
@@ -28,6 +30,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String TASK_CREATIONTIME = "creation_time";
     private static final String TASK_DUETIME = "due_time";
     private static final String TASK_CREATOREMAIL = "creator_email";
+    private static final String TASK_CREATORPHONE = "creator_phone";
     private static final String TASK_WORKEREMAIL = "worker_email";
     private static final String TASK_STATUS = "status";
 
@@ -45,8 +48,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + TASK_TYPE + " text not null,"
             + TASK_DESC + " text not null,"
             + TASK_CREATIONTIME + " text not null,"
-            + TASK_DUETIME + " text,"
+            + TASK_DUETIME + " text not null,"
             + TASK_CREATOREMAIL + " text not null,"
+            + TASK_CREATORPHONE + " text not null,"
             + TASK_WORKEREMAIL + " text,"
             + TASK_STATUS + " text)"; // not null, hasn't implemented yet
 //            + " foreign key (" + USER_EMAIL + ") references users)";
@@ -116,6 +120,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(TASK_CREATOREMAIL, t.getCreator());
         values.put(TASK_DUETIME, t.getDueTime());
         values.put(TASK_CREATIONTIME, t.getCreationTime());
+        values.put(TASK_CREATORPHONE, t.getCreatorPhone());
         values.put(TASK_STATUS, t.getStatus());
 
         db.insert(TASK_TABLE_NAME, null, values);
@@ -132,7 +137,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(TASK_WORKEREMAIL, email);
         values.put(TASK_STATUS, "picked");
 //        values.put(TASK_ID, Integer.toString(id));
-        db.update(TASK_TABLE_NAME, values,TASK_ID + " = '" + Integer.toString(id) + "'",null);
+        db.update(TASK_TABLE_NAME, values, TASK_ID + " = '" + Integer.toString(id) + "'", null);
     }
 
     public Cursor taskQueryCursor() {
@@ -149,6 +154,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     // return tasks created by users other than with this email
     public Cursor otherTaskCursor (String email) {
         Cursor c = getReadableDatabase().rawQuery("select rowid _id, * from tasks where creator_email != '" + email + "' and status = 'available'", null);
+        return c;
+    }
+
+    public Cursor getPhoneNumber(String email){
+        //String where = KEY_DESCRIPTION + "=" + description;
+        Cursor c = getReadableDatabase().rawQuery("select phone, * from users where email = \'"+ email + "\'",null);
+        //if (c != null) {
+         //   c.moveToFirst();
+        //}
         return c;
     }
 

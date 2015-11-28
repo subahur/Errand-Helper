@@ -10,7 +10,7 @@ import java.util.Date;
  */
 public class Task {
 
-    private String name, type, description, status, creatorID,creationTime,dueTime;
+    private String name, type, description, status, creatorID,creationTime,dueTime,creatorPhone;
     private int taskID, workerID;
 
     public Task() {
@@ -86,4 +86,11 @@ public class Task {
         return this.description;
     }
 
+    public void setCreatorPhone(String phone){
+        this.creatorPhone= phone;
+    }
+
+    public String getCreatorPhone(){
+        return this.creatorPhone;
+    }
 }

@@ -2,6 +2,7 @@ package com.example.snr.errand_helper;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.database.Cursor;
 import android.support.v4.app.DialogFragment;
 import android.app.TimePickerDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -49,6 +50,10 @@ public class TaskCreate extends AppCompatActivity {
             HashMap<String, String> user = session.getUserInfo();
             String str = user.get(UserSessionManager.KEY_EMAIL);
 
+            Cursor c = helper.getPhoneNumber(str);
+            c.moveToFirst();
+            String phoneNumber = c.getString(0);
+
             Task t = new Task();
             t.setName(taskNameStr);
             t.setDesc(taskDescStr);
@@ -56,10 +61,10 @@ public class TaskCreate extends AppCompatActivity {
             t.setDueTime(dueDateStr);
             t.setCreator(str);
             t.setStatus("available");
-
+            t.setCreatorPhone(phoneNumber);
 
             helper.insertTask(t);
-            Toast.makeText(TaskCreate.this, "Task \""+t.getName()+"\" has been created", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(TaskCreate.this, "Task \""+t.getName()+"\" has been created", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this,HomePage.class);
             intent.putExtra("Username", currentUserEmail);
             session.createSession(currentUserEmail);
