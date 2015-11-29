@@ -110,7 +110,7 @@
         android:id="@+id/tv_due_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Due dat"
+        android:text="Due date"
         android:layout_below="@+id/tv_task_creator"
         android:layout_alignLeft="@+id/tv_task_creator"
         android:layout_alignStart="@+id/tv_task_creator" />
@@ -131,6 +131,26 @@
         android:layout_alignBottom="@+id/tv_due_date"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:text="    No number    " />
+        android:text="CALL"
+        android:clickable="true"
+        android:onClick="onCallClick" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Phone:"
+        android:layout_below="@+id/textView6"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/tv_phone_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Phone number"
+        android:layout_below="@+id/tv_due_date"
+        android:layout_alignLeft="@+id/tv_due_date"
+        android:layout_alignStart="@+id/tv_due_date" />
 
 </RelativeLayout>

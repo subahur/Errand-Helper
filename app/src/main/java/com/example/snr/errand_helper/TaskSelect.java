@@ -11,6 +11,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CursorAdapter;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
+import android.widget.SimpleCursorAdapter;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.HashMap;
 
@@ -32,25 +36,37 @@ public class TaskSelect extends AppCompatActivity {
 
         ListView ls = (ListView)findViewById(R.id.lv_tasks);
         String[] from = new String[]{"name","description","type","creation_time","creator_email","due_time","creator_phone"};
-        int[] to = new int[]{R.id.tv_task_name,R.id.tv_task_description, R.id.tv_task_type, R.id.tv_created_time, R.id.tv_task_creator, R.id.tv_due_date, R.id.btnPhone};
+        int[] to = new int[]{R.id.tv_task_name,R.id.tv_task_description, R.id.tv_task_type, R.id.tv_created_time, R.id.tv_task_creator, R.id.tv_due_date, R.id.tv_phone_number};
         cursorAdapter = new TaskSelectCursorAdapter(this, R.layout.task_select_entry, helper.otherTaskCursor(email), from, to, CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER,helper, email);
 
         ls.setAdapter(cursorAdapter);
 
 
-
-        findViewById(R.id.btnCall).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialContactPhone("123123123");
-            }
-        });
-
-
     }
 
 
-    private void dialContactPhone(final String phoneNumber) {
+    public void onCallClick(View v){
+
+        if(v.getId() == R.id.btnPhone){
+            RelativeLayout single = (RelativeLayout) v.getParent();
+            TextView phoneNumber = (TextView)single.findViewById(R.id.tv_phone_number);
+            String phoneStr = (String) phoneNumber.getText();
+            Button b = (Button) single.findViewById(R.id.btnPhone);
+            //Toast.makeText(this, "no "+phoneStr, Toast.LENGTH_LONG).show();
+            b.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    dialContactPhone("phoneStr");
+                }
+            });
+            //Cursor c = myDb.getPrimaryKey(heading, description);
+            //myDb.deleteRow(c.getLong(0));
+            //populateLVFromDatabase();
+        }
+
+    }
+
+    private void dialContactPhone(String phoneNumber) {
         startActivity(new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phoneNumber, null)));
     }
 
