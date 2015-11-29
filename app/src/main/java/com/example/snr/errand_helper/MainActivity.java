@@ -1,8 +1,11 @@
 package com.example.snr.errand_helper;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,11 +20,13 @@ public class MainActivity extends AppCompatActivity {
     DatabaseHelper helper = new DatabaseHelper(this);
     UserSessionManager session;
     public static Button button_new;
+    Button b;
     ///
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         session = new UserSessionManager(getApplicationContext());
         if(session.isLoggedIn()){
             Intent intent = new Intent(getApplicationContext(), HomePage.class);
@@ -34,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         onClickTutorialButtonListner();
 
     }
+
 
 
     @Override
@@ -80,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
         {
             Intent intent = new Intent(MainActivity.this, UserCreate.class);
             startActivity(intent);
+
         }
     }
 

@@ -1,10 +1,14 @@
 package com.example.snr.errand_helper;
 
+import android.content.Intent;
 import android.database.Cursor;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.CursorAdapter;
 import android.widget.ListView;
 
@@ -15,7 +19,7 @@ public class TaskSelect extends AppCompatActivity {
     UserSessionManager session;
     private TaskSelectCursorAdapter cursorAdapter;
     DatabaseHelper helper = new DatabaseHelper(this);
-
+    Button b;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,8 +37,23 @@ public class TaskSelect extends AppCompatActivity {
 
         ls.setAdapter(cursorAdapter);
 
-        session = new UserSessionManager(getApplicationContext());
+
+
+        findViewById(R.id.btnCall).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialContactPhone("123123123");
+            }
+        });
+
+
     }
+
+
+    private void dialContactPhone(final String phoneNumber) {
+        startActivity(new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phoneNumber, null)));
+    }
+
 
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
