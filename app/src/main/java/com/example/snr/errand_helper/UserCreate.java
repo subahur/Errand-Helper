@@ -59,7 +59,7 @@ public class UserCreate extends Activity {
             }
             else if(!phoneIsValid(phonestr)){
                 //display error pop up
-                Toast check_phone = Toast.makeText(UserCreate.this ,"Incorrect phone number,Enter a ten digit number", Toast.LENGTH_SHORT);
+                Toast check_phone = Toast.makeText(UserCreate.this ,"Incorrect phone number, enter a ten digit number", Toast.LENGTH_SHORT);
                 check_phone.show();
 
             }
