@@ -7,6 +7,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * Created on 10/19/15.
  */
@@ -36,7 +39,11 @@ public class UserCreate extends Activity {
             String password2str = password2.getText().toString();
             String phonestr = phone.getText().toString();
 
-            if(!password1str.equals(password2str)){
+            if(!isValid(emailstr)){
+                Toast check_email = Toast.makeText(UserCreate.this ,"Email is not valid", Toast.LENGTH_SHORT);
+                check_email.show();
+            }
+            else if(!password1str.equals(password2str)){
                 //display error pop up
                 Toast check_password = Toast.makeText(UserCreate.this ,"Passwords don't match", Toast.LENGTH_SHORT);
                 check_password.show();
@@ -59,6 +66,21 @@ public class UserCreate extends Activity {
             }
         }
 
+    }
+
+    public static boolean isValid(String email)
+    {
+        String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
+        CharSequence inputStr = email;
+        Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(inputStr);
+        if (matcher.matches())
+        {
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
 }
