@@ -104,4 +104,50 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CALL"
+        android:id="@+id/btn_call_todo"
+        android:layout_below="@+id/btn_delete_worker"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:clickable="true" />
+
+    <TextView
+        android:id="@+id/tv_due_todo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Due"
+        android:layout_alignLeft="@+id/tv_task_creator"
+        android:layout_alignStart="@+id/tv_task_creator"
+        android:layout_below="@+id/tv_task_creator" />
+
+    <TextView
+        android:id="@+id/tv_phone_todo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Phone"
+        android:layout_below="@+id/tv_due_todo"
+        android:layout_alignLeft="@+id/tv_due_todo"
+        android:layout_alignStart="@+id/tv_due_todo" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Due:"
+        android:layout_below="@+id/textView5"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Phone:"
+        android:layout_below="@+id/textView8"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
 </RelativeLayout>
