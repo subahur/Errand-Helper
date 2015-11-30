@@ -2,6 +2,7 @@ package com.example.snr.errand_helper;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -39,9 +40,16 @@ public class UserCreate extends Activity {
             String password2str = password2.getText().toString();
             String phonestr = phone.getText().toString();
 
+            Cursor c = helper.emailExistsOrNot(emailstr);
+            int emailCount = c.getCount();
+
             if(!isValid(emailstr)){
                 Toast check_email = Toast.makeText(UserCreate.this ,"Email is not valid", Toast.LENGTH_SHORT);
                 check_email.show();
+            }
+            else if(emailCount>0){
+                Toast check_email_uniqueness = Toast.makeText(UserCreate.this ,"Email already exists,please enter a unique email", Toast.LENGTH_SHORT);
+                check_email_uniqueness.show();
             }
             else if(!password1str.equals(password2str)){
                 //display error pop up

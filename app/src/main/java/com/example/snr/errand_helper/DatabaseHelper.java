@@ -170,11 +170,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return c;
     }
 
+
+
     public Cursor getPhoneNumber(String email){
         //String where = KEY_DESCRIPTION + "=" + description;
         Cursor c = getReadableDatabase().rawQuery("select phone, * from users where email = \'"+ email + "\'",null);
         //if (c != null) {
          //   c.moveToFirst();
+        //}
+        return c;
+    }
+
+    public Cursor emailExistsOrNot(String email){
+        //String where = KEY_DESCRIPTION + "=" + description;
+        Cursor c = getReadableDatabase().rawQuery("select email, * from users where email = \'"+ email + "\'",null);
+        //if (c != null) {
+        //   c.moveToFirst();
         //}
         return c;
     }
