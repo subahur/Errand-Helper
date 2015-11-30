@@ -37,6 +37,17 @@
         android:layout_alignRight="@+id/btn_browse_task"
         android:layout_alignEnd="@+id/btn_browse_task" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/task_todo"
+        android:id="@+id/btn_task_todo"
+        android:layout_below="@+id/btn_my_task"
+        android:layout_alignLeft="@+id/btn_post_task"
+        android:layout_alignStart="@+id/btn_post_task"
+        android:layout_alignRight="@+id/btn_browse_task"
+        android:layout_alignEnd="@+id/btn_browse_task" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

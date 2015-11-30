@@ -26,6 +26,7 @@ public class HomePage extends AppCompatActivity {
         onClickNewTaskButtonListner();
         onClickSelectTaskButtonListner();
         onClickMyTaskButtonListner();
+        onClickTaskToDoButtonListner();
 
     }
 
@@ -59,6 +60,18 @@ public class HomePage extends AppCompatActivity {
                 new View.OnClickListener() {
                     public void onClick(View w) {
                         Intent intent = new Intent("com.example.snr.errand_helper.TaskMy");
+                        startActivity(intent);
+                    }
+                }
+        );
+    }
+
+    public void onClickTaskToDoButtonListner() {
+        button_new_task_submit = (Button) findViewById(R.id.btn_task_todo);
+        button_new_task_submit.setOnClickListener(
+                new View.OnClickListener() {
+                    public void onClick(View w) {
+                        Intent intent = new Intent("com.example.snr.errand_helper.TaskToDo");
                         startActivity(intent);
                     }
                 }

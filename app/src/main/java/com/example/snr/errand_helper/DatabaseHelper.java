@@ -131,6 +131,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.delete(TASK_TABLE_NAME, TASK_ID + " = " + Integer.toString(id),null);
     }
 
+    public void deleteWorker(int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(TASK_WORKEREMAIL, "");
+        values.put(TASK_STATUS, "available");
+        db.update(TASK_TABLE_NAME, values, TASK_ID + " = '" + Integer.toString(id) + "'", null);
+    }
+
     public void updateWorker(String email, int id) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -148,6 +156,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     // return tasks created by user with this email
     public Cursor myTaskCursor (String email) {
         Cursor c = getReadableDatabase().rawQuery("select rowid _id, * from tasks where creator_email = \'"+ email + "\'",null);
+        return c;
+    }
+
+    public Cursor myToDoCursor (String email) {
+        Cursor c = getReadableDatabase().rawQuery("select rowid _id, * from tasks where worker_email = '" + email + "'", null);
         return c;
     }
 

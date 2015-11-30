@@ -3,6 +3,7 @@
     package="com.example.snr.errand_helper" >
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -59,14 +60,23 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".TaskMy"
-            android:label="@string/title_activity_task_my" >
+        android:name=".TaskMy"
+        android:label="@string/title_activity_task_my" >
+        <intent-filter>
+            <action android:name="com.example.snr.errand_helper.TaskMy" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+    </activity>
+        <activity
+            android:name=".TaskToDo"
+            android:label = "TODO list">
             <intent-filter>
-                <action android:name="com.example.snr.errand_helper.TaskMy" />
+                <action android:name="com.example.snr.errand_helper.TaskToDo" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
     </application>
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
+
 </manifest>

@@ -7,12 +7,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.SimpleCursorAdapter;
 
-public class TaskEditCursorAdapter extends SimpleCursorAdapter{
+public class TaskMyCursorAdapter extends SimpleCursorAdapter{
 
             private DatabaseHelper helper;
             String email;
 
-    public TaskEditCursorAdapter(Context context, int layout, Cursor c, String[] from, int[] to, int flags, DatabaseHelper helper, String email) {
+    public TaskMyCursorAdapter(Context context, int layout, Cursor c, String[] from, int[] to, int flags, DatabaseHelper helper, String email) {
         super(context, layout,c, from, to, flags);
         this.helper = helper;
         this.email = email;
