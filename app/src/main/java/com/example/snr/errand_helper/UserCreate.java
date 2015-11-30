@@ -44,7 +44,7 @@ public class UserCreate extends Activity {
             int emailCount = c.getCount();
 
             if(!isValid(emailstr)){
-                Toast check_email = Toast.makeText(UserCreate.this ,"Email is not valid", Toast.LENGTH_SHORT);
+                Toast check_email = Toast.makeText(UserCreate.this ,"Email is not valid, has to be a 'example@example.com' expression", Toast.LENGTH_SHORT);
                 check_email.show();
             }
             else if(emailCount>0){
@@ -53,7 +53,7 @@ public class UserCreate extends Activity {
             }
             else if(!password1str.equals(password2str)){
                 //display error pop up
-                Toast check_password = Toast.makeText(UserCreate.this ,"Passwords don't match", Toast.LENGTH_SHORT);
+                Toast check_password = Toast.makeText(UserCreate.this ,"Password and Re-type password doesn't match", Toast.LENGTH_SHORT);
                 check_password.show();
 
             }
