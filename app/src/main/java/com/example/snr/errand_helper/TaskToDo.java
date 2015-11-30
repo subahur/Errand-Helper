@@ -12,6 +12,7 @@ import android.widget.CursorAdapter;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.HashMap;
 
@@ -45,13 +46,13 @@ public class TaskToDo extends AppCompatActivity {
         if(v.getId() == R.id.btn_call_todo){
             RelativeLayout single = (RelativeLayout) v.getParent();
             TextView phoneNumber = (TextView)single.findViewById(R.id.tv_phone_todo);
-            String phoneStr = (String) phoneNumber.getText();
+            final String phoneStr = (String) phoneNumber.getText();
             Button b = (Button) single.findViewById(R.id.btn_call_todo);
-            //Toast.makeText(this, "no "+phoneStr, Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Call: " + phoneStr, Toast.LENGTH_LONG).show();
             b.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    dialContactPhone("phoneStr");
+                    dialContactPhone(phoneStr);
                 }
             });
             //Cursor c = myDb.getPrimaryKey(heading, description);
