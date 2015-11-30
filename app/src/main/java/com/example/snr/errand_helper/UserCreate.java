@@ -48,7 +48,7 @@ public class UserCreate extends Activity {
                 check_email.show();
             }
             else if(emailCount>0){
-                Toast check_email_uniqueness = Toast.makeText(UserCreate.this ,"Email already exists,please enter a unique email address", Toast.LENGTH_SHORT);
+                Toast check_email_uniqueness = Toast.makeText(UserCreate.this ,"Email already exists, please enter a unique email address", Toast.LENGTH_SHORT);
                 check_email_uniqueness.show();
             }
             else if(!password1str.equals(password2str)){
