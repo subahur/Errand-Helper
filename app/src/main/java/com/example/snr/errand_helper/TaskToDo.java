@@ -40,7 +40,7 @@ public class TaskToDo extends AppCompatActivity {
         session = new UserSessionManager(getApplicationContext());
     }
 
-    public void onCallTodoClick(View v){
+    public void onCallClickableToDo(View v){
 
         if(v.getId() == R.id.btn_call_todo){
             RelativeLayout single = (RelativeLayout) v.getParent();
