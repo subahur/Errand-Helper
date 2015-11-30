@@ -57,6 +57,12 @@ public class UserCreate extends Activity {
                 check_password.show();
 
             }
+            else if(!phoneIsValid(phonestr)){
+                //display error pop up
+                Toast check_phone = Toast.makeText(UserCreate.this ,"Incorrect phone number", Toast.LENGTH_SHORT);
+                check_phone.show();
+
+            }
             else{
                 //create a new user and add in db
                 User u = new User();
@@ -91,4 +97,19 @@ public class UserCreate extends Activity {
         }
     }
 
+
+    public static boolean phoneIsValid(String email)
+    {
+        String expression = "^(?:(?:\\+?1\\s*(?:[.-]\\s*)?)?(?:\\(\\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\\s*\\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\\s*(?:[.-]\\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\\s*(?:[.-]\\s*)?([0-9]{4})(?:\\s*(?:#|x\\.?|ext\\.?|extension)\\s*(\\d+))?$";
+        CharSequence inputStr = email;
+        Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(inputStr);
+        if (matcher.matches())
+        {
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }
