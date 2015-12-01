@@ -10,9 +10,7 @@
     <Button
         android:id="@+id/btn_post_task"
         android:text="@string/create_task"
-        android:layout_marginTop="64dp"
-        android:layout_below="@+id/TVusername"
-        android:layout_centerHorizontal="true"
+        android:layout_marginTop="74dp"
         android:backgroundTint="#cdd0ff"
         android:clickable="true"
         android:textColor="#507EBA"
@@ -23,7 +21,9 @@
         android:shadowColor="#A8A8A8"
         android:shadowDx="0"
         android:shadowDy="0"
-        android:shadowRadius="5"/>
+        android:shadowRadius="5"
+        android:layout_below="@+id/textView10"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:text="@string/select_task"
@@ -39,10 +39,10 @@
         android:shadowDx="0"
         android:shadowDy="0"
         android:shadowRadius="5"
-        android:layout_below="@+id/btn_post_task"
-        android:layout_alignLeft="@+id/btn_post_task"
-        android:layout_alignStart="@+id/btn_post_task"
-        android:layout_marginTop="40dp" />
+        android:layout_marginTop="100dp"
+        android:layout_below="@+id/btn_my_task"
+        android:layout_alignLeft="@+id/btn_my_task"
+        android:layout_alignStart="@+id/btn_my_task" />
 
     <Button
         android:text="@string/my_task"
@@ -58,10 +58,10 @@
         android:shadowDx="0"
         android:shadowDy="0"
         android:shadowRadius="5"
-        android:layout_marginTop="49dp"
-        android:layout_below="@+id/btn_browse_task"
-        android:layout_alignLeft="@+id/btn_browse_task"
-        android:layout_alignStart="@+id/btn_browse_task" />
+        android:layout_marginTop="33dp"
+        android:layout_below="@+id/btn_post_task"
+        android:layout_alignLeft="@+id/btn_post_task"
+        android:layout_alignStart="@+id/btn_post_task" />
 
     <Button
         android:text="@string/task_todo"
@@ -77,21 +77,10 @@
         android:shadowDx="0"
         android:shadowDy="0"
         android:shadowRadius="5"
-        android:layout_marginTop="45dp"
-        android:layout_below="@+id/btn_my_task"
-        android:layout_alignLeft="@+id/btn_my_task"
-        android:layout_alignStart="@+id/btn_my_task" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="User"
-        android:id="@+id/TVusername"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="25dp" />
+        android:layout_marginTop="32dp"
+        android:layout_below="@+id/btn_browse_task"
+        android:layout_alignLeft="@+id/btn_browse_task"
+        android:layout_alignStart="@+id/btn_browse_task" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -102,6 +91,16 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="User"
+        android:id="@+id/TVusername"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/textView10"
+        android:layout_toEndOf="@+id/textView10" />
 
 
 </RelativeLayout>

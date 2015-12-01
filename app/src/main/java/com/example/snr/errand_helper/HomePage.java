@@ -22,7 +22,7 @@ public class HomePage extends AppCompatActivity {
 
         String username = getIntent().getStringExtra("Username");
         TextView tv = (TextView)findViewById(R.id.TVusername);
-        tv.setText(username);
+        tv.setText(" "+username);
         onClickNewTaskButtonListner();
         onClickSelectTaskButtonListner();
         onClickMyTaskButtonListner();
