@@ -13,9 +13,11 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/et_email"
+        android:hint="@string/email"
+        android:layout_marginTop="45dp"
+        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:hint="@string/email" />
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="fill_parent"
@@ -48,9 +50,9 @@
         android:id="@+id/btn_signup"
         android:onClick="onButtonClick"
         android:backgroundTint="#c1c9ff"
-        android:layout_centerVertical="true"
-        android:layout_alignRight="@+id/et_password_2"
-        android:layout_alignEnd="@+id/et_password_2" />
+        android:layout_below="@+id/et_phone"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="67dp" />
 
     <EditText
         android:layout_width="fill_parent"
