@@ -52,7 +52,7 @@ public class TaskSelect extends AppCompatActivity {
             TextView phoneNumber = (TextView)single.findViewById(R.id.tv_phone_number);
             final String phoneStr = (String) phoneNumber.getText();
             Button b = (Button) single.findViewById(R.id.btnPhone);
-            Toast.makeText(this, "Call: "+phoneStr, Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Call: "+phoneStr, Toast.LENGTH_SHORT).show();
             b.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

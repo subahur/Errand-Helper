@@ -16,7 +16,7 @@
     <string name="taskdescription">Task Description</string>
     <string name="tasktype">Task Type</string>
     <string name="taskname">Task Name</string>
-    <string name="submittask">Submit</string>
+    <string name="submittask">Post task</string>
     <string name="selecttask">Do a Task</string>
     <string name="exampletask">Example Task</string>
     <string name="action_settings">Settings</string>

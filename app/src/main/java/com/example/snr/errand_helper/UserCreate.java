@@ -44,7 +44,7 @@ public class UserCreate extends Activity {
             int emailCount = c.getCount();
 
             if(!isValid(emailstr)){
-                Toast check_email = Toast.makeText(UserCreate.this ,"Email is not valid, it has to be a 'example@example.com' expression", Toast.LENGTH_SHORT);
+                Toast check_email = Toast.makeText(UserCreate.this ,"Not valid, has to be a brandeis email, e.g. 'example@brandeis.edu' ", Toast.LENGTH_SHORT);
                 check_email.show();
             }
             else if(emailCount>0){

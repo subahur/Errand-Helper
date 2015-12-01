@@ -48,7 +48,7 @@ public class TaskToDo extends AppCompatActivity {
             TextView phoneNumber = (TextView)single.findViewById(R.id.tv_phone_todo);
             final String phoneStr = (String) phoneNumber.getText();
             Button b = (Button) single.findViewById(R.id.btn_call_todo);
-            Toast.makeText(this, "Call: " + phoneStr, Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Call: " + phoneStr, Toast.LENGTH_SHORT).show();
             b.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
