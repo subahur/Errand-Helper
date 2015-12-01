@@ -84,7 +84,7 @@ public class UserCreate extends Activity {
 
     public static boolean isValid(String email)
     {
-        String expression = "^[\\w\\.-]+@((s|brandeis)+\\.)+(s|edu)";
+        String expression = "^[\\w\\.-]+@((brandeis)+\\.)+(edu)";
         CharSequence inputStr = email;
         Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(inputStr);
