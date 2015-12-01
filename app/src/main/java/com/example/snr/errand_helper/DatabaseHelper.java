@@ -12,7 +12,7 @@ import java.text.SimpleDateFormat;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 1;
-    private static final String DATABASE_NAME = "errandHelper22.db";
+    private static final String DATABASE_NAME = "errandHelper44.db";
 
     private static final String USER_TABLE_NAME = "users";
     private static final String USER_ID = "user_id";
@@ -33,6 +33,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String TASK_CREATORPHONE = "creator_phone";
     private static final String TASK_WORKEREMAIL = "worker_email";
     private static final String TASK_STATUS = "status";
+    private static final String PRICE = "price";
 
     SQLiteDatabase db;
 
@@ -51,6 +52,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + TASK_DUETIME + " text not null,"
             + TASK_CREATOREMAIL + " text not null,"
             + TASK_CREATORPHONE + " text not null,"
+            + PRICE + " text not null,"
             + TASK_WORKEREMAIL + " text,"
             + TASK_STATUS + " text)"; // not null, hasn't implemented yet
 //            + " foreign key (" + USER_EMAIL + ") references users)";
@@ -122,6 +124,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(TASK_CREATIONTIME, t.getCreationTime());
         values.put(TASK_CREATORPHONE, t.getCreatorPhone());
         values.put(TASK_STATUS, t.getStatus());
+        values.put(PRICE, t.getPrice());
 
         db.insert(TASK_TABLE_NAME, null, values);
     }

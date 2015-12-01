@@ -66,8 +66,8 @@
         android:shadowDx="0"
         android:shadowDy="0"
         android:shadowRadius="5"
-        android:layout_marginTop="82dp"
-        android:layout_below="@+id/et_due_date"
+        android:layout_marginTop="64dp"
+        android:layout_below="@+id/et_price"
         android:layout_centerHorizontal="true" />
 
     <EditText
@@ -76,6 +76,15 @@
         android:id="@+id/et_due_date"
         android:hint="Month/day Hour:minutes"
         android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_price"
+        android:hint="@string/price"
+        android:layout_below="@+id/et_due_date"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 

@@ -26,6 +26,7 @@
     <string name="title_activity_task_create">Create a task</string>
     <string name="title_activity_task_select">Do a task</string>
     <string name="pick_due_time">Pick a due time</string>
+    <string name="price">Willing to pay (Price)</string>
 
 
     <string-array name = "task_types">

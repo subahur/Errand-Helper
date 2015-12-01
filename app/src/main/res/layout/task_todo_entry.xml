@@ -170,4 +170,22 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price:"
+        android:layout_below="@+id/tv_phone_todo"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/tv_price_todo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price"
+        android:layout_below="@+id/tv_phone_todo"
+        android:layout_alignLeft="@+id/tv_phone_todo"
+        android:layout_alignStart="@+id/tv_phone_todo" />
+
 </RelativeLayout>

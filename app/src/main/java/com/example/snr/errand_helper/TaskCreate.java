@@ -40,12 +40,14 @@ public class TaskCreate extends AppCompatActivity {
             EditText taskName = (EditText)findViewById(R.id.et_task_name);
             EditText taskDesc = (EditText)findViewById(R.id.et_task_desc);
             EditText dueDate = (EditText)findViewById(R.id.et_due_date);
+            EditText price = (EditText)findViewById(R.id.et_price);
             Spinner taskType = (Spinner)findViewById(R.id.sp_task_type);
 
             String taskNameStr = taskName.getText().toString();
             String taskDescStr = taskDesc.getText().toString();
             String dueDateStr = dueDate.getText().toString();
             String taskTypeStr = taskType.getSelectedItem().toString();
+            String priceStr = price.getText().toString();
 
             HashMap<String, String> user = session.getUserInfo();
             String str = user.get(UserSessionManager.KEY_EMAIL);
@@ -62,6 +64,7 @@ public class TaskCreate extends AppCompatActivity {
             t.setCreator(str);
             t.setStatus("available");
             t.setCreatorPhone(phoneNumber);
+            t.setPrice(priceStr);
 
             helper.insertTask(t);
             //Toast.makeText(TaskCreate.this, "Task \""+t.getName()+"\" has been created", Toast.LENGTH_SHORT).show();
