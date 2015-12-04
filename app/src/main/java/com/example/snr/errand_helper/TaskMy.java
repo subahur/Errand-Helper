@@ -25,8 +25,8 @@ public class TaskMy extends AppCompatActivity {
         String email = user.get(UserSessionManager.KEY_EMAIL);
 
         ListView ls = (ListView)findViewById(R.id.lv_tasks);
-        String[] from = new String[]{"name","description","type","creation_time","creator_email","due_time","price","status"};
-        int[] to = new int[]{R.id.tv_task_name,R.id.tv_task_description, R.id.tv_task_type, R.id.tv_created_time, R.id.tv_task_creator, R.id.tv_due_date, R.id.tv_price_mytask, R.id.tv_status};
+        String[] from = new String[]{"name","description","type","creation_time","creator_email","due_time","price","status","worker_email"};
+        int[] to = new int[]{R.id.tv_task_name,R.id.tv_task_description, R.id.tv_task_type, R.id.tv_created_time, R.id.tv_task_creator, R.id.tv_due_date, R.id.tv_price_mytask, R.id.tv_status, R.id.tv_worker_email};
         cursorAdapter = new TaskMyCursorAdapter(this, R.layout.task_my_entry, helper.myTaskCursor(email), from, to, CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER,helper, email);
 
         ls.setAdapter(cursorAdapter);

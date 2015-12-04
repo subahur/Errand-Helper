@@ -110,9 +110,10 @@
         android:shadowDx="0"
         android:shadowDy="0"
         android:shadowRadius="5"
-        android:layout_below="@+id/tv_price_mytask"
+        android:layout_below="@+id/tv_status"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="33dp" />
 
     <Button
         android:text="DONE"
@@ -128,7 +129,7 @@
         android:shadowDx="0"
         android:shadowDy="0"
         android:shadowRadius="5"
-        android:layout_below="@+id/tv_price_mytask"
+        android:layout_alignTop="@+id/btn_delete_item"
         android:layout_toLeftOf="@+id/btn_delete_item"
         android:layout_toStartOf="@+id/btn_delete_item" />
 
@@ -173,7 +174,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Status:"
-        android:layout_alignTop="@+id/btn_done_item"
+        android:layout_alignTop="@+id/tv_status"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -185,5 +186,22 @@
         android:layout_below="@+id/tv_price_mytask"
         android:layout_alignLeft="@+id/tv_price_mytask"
         android:layout_alignStart="@+id/tv_price_mytask" />
+
+    <TextView
+        android:id="@+id/tv_worker_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_status"
+        android:layout_alignLeft="@+id/tv_status"
+        android:layout_alignStart="@+id/tv_status" />
+
+    <TextView
+        android:id="@+id/tv_worker_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Worker:"
+        android:layout_below="@+id/textView14"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
