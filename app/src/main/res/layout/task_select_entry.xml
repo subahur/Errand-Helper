@@ -105,7 +105,7 @@
             android:layout_alignStart="@+id/tv_task_creator" />
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/tv_due"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Due:"
@@ -118,7 +118,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Phone:"
-            android:layout_below="@+id/textView6"
+            android:layout_below="@+id/tv_due"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 

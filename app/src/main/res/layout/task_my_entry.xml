@@ -114,23 +114,23 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
-    <Button
-        android:text="EDIT"
-        android:id="@+id/btn_edit_item"
-        android:backgroundTint="#cdd0ff"
-        android:clickable="true"
-        android:textColor="#507EBA"
-        android:textSize="15sp"
-        android:layout_width="70dp"
-        android:layout_height="30dp"
-        android:background="@drawable/buttonshape"
-        android:shadowColor="#A8A8A8"
-        android:shadowDx="0"
-        android:shadowDy="0"
-        android:shadowRadius="5"
-        android:layout_alignTop="@+id/btn_delete_item"
-        android:layout_toLeftOf="@+id/btn_delete_item"
-        android:layout_toStartOf="@+id/btn_delete_item" />
+    <!--<Button-->
+        <!--android:text="EDIT"-->
+        <!--android:id="@+id/btn_edit_item"-->
+        <!--android:backgroundTint="#cdd0ff"-->
+        <!--android:clickable="true"-->
+        <!--android:textColor="#507EBA"-->
+        <!--android:textSize="15sp"-->
+        <!--android:layout_width="70dp"-->
+        <!--android:layout_height="30dp"-->
+        <!--android:background="@drawable/buttonshape"-->
+        <!--android:shadowColor="#A8A8A8"-->
+        <!--android:shadowDx="0"-->
+        <!--android:shadowDy="0"-->
+        <!--android:shadowRadius="5"-->
+        <!--android:layout_alignTop="@+id/btn_delete_item"-->
+        <!--android:layout_toLeftOf="@+id/btn_delete_item"-->
+        <!--android:layout_toStartOf="@+id/btn_delete_item" />-->
 
     <TextView
         android:id="@+id/tv_due_date"
@@ -142,7 +142,7 @@
         android:layout_alignStart="@+id/tv_task_creator" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/tv_due"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Due:"
@@ -151,7 +151,7 @@
         android:layout_alignParentStart="true" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/tv_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Price($):"
@@ -173,7 +173,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Status:"
-        android:layout_alignTop="@+id/btn_edit_item"
+        android:layout_alignTop="@+id/btn_delete_item"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
