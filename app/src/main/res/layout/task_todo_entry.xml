@@ -111,8 +111,8 @@
         android:shadowDy="0"
         android:shadowRadius="5"
         android:layout_alignTop="@+id/btn_done"
-        android:layout_toLeftOf="@+id/btn_done"
-        android:layout_toStartOf="@+id/btn_done" />
+        android:layout_toRightOf="@+id/btn_call_todo"
+        android:layout_toEndOf="@+id/btn_call_todo" />
 
     <Button
 
@@ -131,8 +131,8 @@
         android:shadowDy="0"
         android:shadowRadius="5"
         android:layout_alignTop="@+id/btn_delete_worker"
-        android:layout_toLeftOf="@+id/btn_delete_worker"
-        android:layout_toStartOf="@+id/btn_delete_worker" />
+        android:layout_toRightOf="@+id/tv_task_name"
+        android:layout_toEndOf="@+id/tv_task_name" />
 
     <TextView
         android:id="@+id/tv_due_todo"
@@ -203,7 +203,26 @@
         android:shadowDy="0"
         android:shadowRadius="5"
         android:layout_below="@+id/tv_price_todo"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_toRightOf="@+id/btn_delete_worker"
+        android:layout_toEndOf="@+id/btn_delete_worker"
+        android:layout_marginTop="38dp" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Status:"
+        android:layout_below="@+id/textView13"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/tv_task_status_todo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Status"
+        android:layout_below="@+id/tv_price_todo"
+        android:layout_alignLeft="@+id/tv_price_todo"
+        android:layout_alignStart="@+id/tv_price_todo" />
 
 </RelativeLayout>
