@@ -129,8 +129,8 @@
         android:shadowDy="0"
         android:shadowRadius="5"
         android:layout_alignTop="@+id/btn_delete_item"
-        android:layout_toRightOf="@+id/tv_task_description"
-        android:layout_toEndOf="@+id/tv_task_description" />
+        android:layout_toLeftOf="@+id/btn_delete_item"
+        android:layout_toStartOf="@+id/btn_delete_item" />
 
     <TextView
         android:id="@+id/tv_due_date"

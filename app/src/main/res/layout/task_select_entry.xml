@@ -147,8 +147,8 @@
         android:shadowDy="0"
         android:shadowRadius="5"
         android:layout_below="@+id/tv_price_select"
-        android:layout_toRightOf="@+id/tv_task_description"
-        android:layout_toEndOf="@+id/tv_task_description" />
+        android:layout_toLeftOf="@+id/btn_select_task"
+        android:layout_toStartOf="@+id/btn_select_task" />
 
     <TextView
         android:id="@+id/textView7"

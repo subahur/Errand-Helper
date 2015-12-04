@@ -131,8 +131,8 @@
         android:shadowDy="0"
         android:shadowRadius="5"
         android:layout_below="@+id/tv_price_todo"
-        android:layout_toRightOf="@+id/tv_task_description"
-        android:layout_toEndOf="@+id/tv_task_description" />
+        android:layout_toLeftOf="@+id/btn_delete_worker"
+        android:layout_toStartOf="@+id/btn_delete_worker" />
 
     <TextView
         android:id="@+id/tv_due_todo"
