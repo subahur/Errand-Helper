@@ -163,7 +163,7 @@
         android:shadowDx="0"
         android:shadowDy="0"
         android:shadowRadius="5"
-        android:layout_alignTop="@+id/btnPhone"
+        android:layout_below="@+id/tv_price_select"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
@@ -182,7 +182,7 @@
         android:shadowDx="0"
         android:shadowDy="0"
         android:shadowRadius="5"
-        android:layout_below="@+id/et_price"
+        android:layout_alignTop="@+id/btn_select_task"
         android:layout_toLeftOf="@+id/btn_select_task"
         android:layout_toStartOf="@+id/btn_select_task" />
 
