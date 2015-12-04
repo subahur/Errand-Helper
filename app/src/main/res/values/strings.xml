@@ -34,9 +34,11 @@
 
     <string-array name = "task_types">
 
-        <item> Grocery </item>
+        <item> Moving help </item>
         <item> Ride </item>
+        <item> Delivery </item>
         <item> Cleaning </item>
+        <item> Other </item>
 
     </string-array>
     <string name="title_activity_home_page">Home Page</string>
