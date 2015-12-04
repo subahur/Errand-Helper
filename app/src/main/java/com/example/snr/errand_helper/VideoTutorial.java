@@ -11,7 +11,7 @@ import android.widget.VideoView;
 
 public class VideoTutorial extends Activity {
 
-    private static final String TUTORIAL_URL = "http://onedrive.live.com/?authkey=%21ANwdKIEN5lNuGgQ&cid=2B3F4AE08BE4FF47&id=2B3F4AE08BE4FF47%2115500&group=0&parId=2B3F4AE08BE4FF47%2115490&o=OneUp";
+    private static final String TUTORIAL_URL = "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4";
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
