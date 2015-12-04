@@ -12,7 +12,7 @@ import java.text.SimpleDateFormat;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 1;
-    private static final String DATABASE_NAME = "errandHelper77.db";
+    private static final String DATABASE_NAME = "errandHelper88.db";
 
     private static final String USER_TABLE_NAME = "users";
     private static final String USER_ID = "user_id";
@@ -156,6 +156,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(TASK_WORKEREMAIL, "");
         values.put(TASK_STATUS, "Complete");
+        db.update(TASK_TABLE_NAME, values, TASK_ID + " = '" + Integer.toString(id) + "'", null);
+    }
+
+    public void verifiedWork(int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(TASK_STATUS, "Verified Complete");
         db.update(TASK_TABLE_NAME, values, TASK_ID + " = '" + Integer.toString(id) + "'", null);
     }
 
