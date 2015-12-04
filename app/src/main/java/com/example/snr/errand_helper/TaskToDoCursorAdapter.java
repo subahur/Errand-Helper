@@ -21,12 +21,23 @@ public class TaskToDoCursorAdapter extends SimpleCursorAdapter {
     public View getView(final int position, final View convertView, ViewGroup parent) {
         View v = super.getView(position, convertView, parent);
         Button btn_delete_worker = (Button) v.findViewById(R.id.btn_delete_worker);
+        Button btn_done = (Button) v.findViewById(R.id.btn_done);
         btn_delete_worker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Cursor cursor = (Cursor) getItem(position);
                 int id = cursor.getInt(cursor.getColumnIndex(helper.TASK_ID));
                 helper.deleteWorker(id);
+                cursor = helper.myToDoCursor(email);
+                changeCursor(cursor);
+            }
+        });
+        btn_done.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Cursor cursor = (Cursor) getItem(position);
+                int id = cursor.getInt(cursor.getColumnIndex(helper.TASK_ID));
+                helper.doneWorker(id);
                 cursor = helper.myToDoCursor(email);
                 changeCursor(cursor);
             }

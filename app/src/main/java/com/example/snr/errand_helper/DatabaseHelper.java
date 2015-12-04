@@ -12,7 +12,7 @@ import java.text.SimpleDateFormat;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 1;
-    private static final String DATABASE_NAME = "errandHelper44.db";
+    private static final String DATABASE_NAME = "errandHelper66.db";
 
     private static final String USER_TABLE_NAME = "users";
     private static final String USER_ID = "user_id";
@@ -54,7 +54,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + TASK_CREATORPHONE + " text not null,"
             + PRICE + " text not null,"
             + TASK_WORKEREMAIL + " text,"
-            + TASK_STATUS + " text)"; // not null, hasn't implemented yet
+            + TASK_STATUS + " text not null)"; // not null, hasn't implemented yet
 //            + " foreign key (" + USER_EMAIL + ") references users)";
 
     public DatabaseHelper(Context context){
@@ -138,7 +138,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(TASK_WORKEREMAIL, "");
-        values.put(TASK_STATUS, "available");
+        values.put(TASK_STATUS, "Available");
         db.update(TASK_TABLE_NAME, values, TASK_ID + " = '" + Integer.toString(id) + "'", null);
     }
 
@@ -146,8 +146,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(TASK_WORKEREMAIL, email);
-        values.put(TASK_STATUS, "picked");
+        values.put(TASK_STATUS, "In progress");
 //        values.put(TASK_ID, Integer.toString(id));
+        db.update(TASK_TABLE_NAME, values, TASK_ID + " = '" + Integer.toString(id) + "'", null);
+    }
+
+    public void doneWorker(int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(TASK_WORKEREMAIL, "");
+        values.put(TASK_STATUS, "Complete");
         db.update(TASK_TABLE_NAME, values, TASK_ID + " = '" + Integer.toString(id) + "'", null);
     }
 
