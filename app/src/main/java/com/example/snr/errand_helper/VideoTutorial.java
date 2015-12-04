@@ -17,13 +17,14 @@ public class VideoTutorial extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video_tutorial);
         VideoView vidView = (VideoView)findViewById(R.id.myVideo);
-        Uri vidUri = Uri.parse(TUTORIAL_URL);
-        //vidView.setVideoPath("/sdcard/skeleton.mp4");
-        vidView.setVideoURI(vidUri);
+        //Uri vidUri = Uri.parse(TUTORIAL_URL);
+        vidView.setVideoPath("/sdcard/skeleton.mp4");
+       // vidView.setVideoURI(vidUri);
         MediaController vidControl = new MediaController(this);
         vidControl.setAnchorView(vidView);
         vidView.setMediaController(vidControl);
         vidView.start();
+        vidView.requestFocus();
 
     }
 
