@@ -110,9 +110,9 @@
         android:shadowDx="0"
         android:shadowDy="0"
         android:shadowRadius="5"
+        android:layout_below="@+id/tv_price_mytask"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignBottom="@+id/tv_task_description" />
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:text="EDIT"
@@ -128,9 +128,9 @@
         android:shadowDx="0"
         android:shadowDy="0"
         android:shadowRadius="5"
-        android:layout_alignTop="@+id/tv_created_time"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignTop="@+id/btn_delete_item"
+        android:layout_toRightOf="@+id/tv_task_description"
+        android:layout_toEndOf="@+id/tv_task_description" />
 
     <TextView
         android:id="@+id/tv_due_date"

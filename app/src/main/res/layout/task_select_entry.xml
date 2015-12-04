@@ -109,9 +109,9 @@
         android:shadowDx="0"
         android:shadowDy="0"
         android:shadowRadius="5"
-        android:layout_alignTop="@+id/tv_task_description"
-        android:layout_alignLeft="@+id/btnPhone"
-        android:layout_alignStart="@+id/btnPhone" />
+        android:layout_alignTop="@+id/btnPhone"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:id="@+id/tv_due_date"
@@ -133,9 +133,6 @@
 
     <Button
         android:id="@+id/btnPhone"
-        android:layout_alignBottom="@+id/tv_due_date"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
         android:text="CALL"
         android:onClick="onCallClick"
         android:backgroundTint="#cdd0ff"
@@ -148,7 +145,10 @@
         android:shadowColor="#A8A8A8"
         android:shadowDx="0"
         android:shadowDy="0"
-        android:shadowRadius="5"/>
+        android:shadowRadius="5"
+        android:layout_below="@+id/tv_price_select"
+        android:layout_toRightOf="@+id/tv_task_description"
+        android:layout_toEndOf="@+id/tv_task_description" />
 
     <TextView
         android:id="@+id/textView7"
