@@ -129,7 +129,7 @@ public class TaskCreate extends AppCompatActivity {
             t.setDesc(taskDescStr);
             t.setType(taskTypeStr);
             t.setCreator(str);
-            t.setStatus("available");
+            t.setStatus("Available");
             t.setCreatorPhone(phoneNumber);
             t.setPrice(priceStr);
             t.setDueTime(dateFormat.format(time.getTime()) + timeFormat.format(time.getTime()));

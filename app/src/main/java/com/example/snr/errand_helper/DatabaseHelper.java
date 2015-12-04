@@ -177,7 +177,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     // return tasks created by users other than with this email
     public Cursor otherTaskCursor (String email) {
-        Cursor c = getReadableDatabase().rawQuery("select rowid _id, * from tasks where creator_email != '" + email + "' and status = 'available'", null);
+        Cursor c = getReadableDatabase().rawQuery("select rowid _id, * from tasks where creator_email != '" + email + "' and status = 'Available'", null);
         return c;
     }
 
