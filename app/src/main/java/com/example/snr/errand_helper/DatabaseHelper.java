@@ -178,7 +178,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public Cursor myToDoCursor (String email) {
-        Cursor c = getReadableDatabase().rawQuery("select rowid _id, * from tasks where worker_email = '" + email + "' and status = 'Complete'", null);
+        Cursor c = getReadableDatabase().rawQuery("select rowid _id, * from tasks where worker_email = '" + email + "' and (status = 'Complete' or status = 'In progress')", null);
         return c;
     }
 
