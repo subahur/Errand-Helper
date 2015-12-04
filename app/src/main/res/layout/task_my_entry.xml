@@ -115,8 +115,8 @@
         android:layout_alignParentEnd="true" />
 
     <Button
-        android:text="EDIT"
-        android:id="@+id/btn_edit_item"
+        android:text="DONE"
+        android:id="@+id/btn_done_item"
         android:backgroundTint="#cdd0ff"
         android:clickable="true"
         android:textColor="#507EBA"
@@ -128,7 +128,7 @@
         android:shadowDx="0"
         android:shadowDy="0"
         android:shadowRadius="5"
-        android:layout_alignTop="@+id/btn_delete_item"
+        android:layout_below="@+id/tv_price_mytask"
         android:layout_toLeftOf="@+id/btn_delete_item"
         android:layout_toStartOf="@+id/btn_delete_item" />
 
@@ -173,7 +173,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Status:"
-        android:layout_alignTop="@+id/btn_edit_item"
+        android:layout_alignTop="@+id/btn_done_item"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 

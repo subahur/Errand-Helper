@@ -22,7 +22,7 @@ public class TaskMyCursorAdapter extends SimpleCursorAdapter{
     public View getView(final int position, final View convertView, ViewGroup parent) {
         View v = super.getView(position, convertView, parent);
         Button btn_del = (Button) v.findViewById(R.id.btn_delete_item);
-        Button btn_edit = (Button) v.findViewById(R.id.btn_edit_item);
+        Button btn_done = (Button) v.findViewById(R.id.btn_done_item);
         btn_del.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -33,11 +33,17 @@ public class TaskMyCursorAdapter extends SimpleCursorAdapter{
                 changeCursor(cursor);
             }
         });
-        btn_edit.setOnClickListener(new View.OnClickListener() {
+        btn_done.setOnClickListener(new View.OnClickListener(){
+            @Override
             public void onClick(View v) {
-                // not implemented
+                Cursor cursor = (Cursor) getItem(position);
+                int id = cursor.getInt(cursor.getColumnIndex(helper.TASK_ID));
+                helper.verifiedWork(id);
+                cursor = helper.myTaskCursor(email);
+                changeCursor(cursor);
             }
         });
+
         return v;
     }
 }
