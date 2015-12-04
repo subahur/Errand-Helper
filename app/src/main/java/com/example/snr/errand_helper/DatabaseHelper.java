@@ -178,7 +178,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public Cursor myToDoCursor (String email) {
-        Cursor c = getReadableDatabase().rawQuery("select rowid _id, * from tasks where worker_email = '" + email + "'", null);
+        Cursor c = getReadableDatabase().rawQuery("select rowid _id, * from tasks where worker_email = '" + email + "' and status = 'Complete'", null);
         return c;
     }
 
@@ -187,8 +187,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor c = getReadableDatabase().rawQuery("select rowid _id, * from tasks where creator_email != '" + email + "' and status = 'Available'", null);
         return c;
     }
-
-
 
     public Cursor getPhoneNumber(String email){
         //String where = KEY_DESCRIPTION + "=" + description;
