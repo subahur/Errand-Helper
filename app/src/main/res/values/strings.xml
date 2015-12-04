@@ -25,7 +25,10 @@
     <string name="task_todo">TO-DO LIST</string>
     <string name="title_activity_task_create">Create a task</string>
     <string name="title_activity_task_select">Do a task</string>
-    <string name="pick_due_time">Pick a due time</string>
+    <string name="due_date">Due date</string>
+    <string name="due_time">Due time</string>
+    <string name="pick_due_time">Pick a time</string>
+    <string name="pick_due_date">Pick a date</string>
     <string name="price">Willing to pay (Price)</string>
 
 

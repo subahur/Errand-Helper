@@ -1,9 +1,10 @@
 package com.example.snr.errand_helper;
 
+import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.app.DialogFragment;
 import android.content.Intent;
 import android.database.Cursor;
-import android.support.v4.app.DialogFragment;
 import android.app.TimePickerDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,11 +12,14 @@ import android.text.format.DateFormat;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
 
@@ -24,12 +28,78 @@ public class TaskCreate extends AppCompatActivity {
     UserSessionManager session;
     DatabaseHelper helper = new DatabaseHelper(this);
     String currentUserEmail;
+    private static Calendar time;
+    private static TextView dateTextView;
+    private static TextView timeTextView;
+    private static SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");;
+    private static SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
+
+    public static class DatePickerFragment extends android.app.DialogFragment
+            implements DatePickerDialog.OnDateSetListener {
+
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            // Use the current date as the default date in the picker
+            final Calendar c = Calendar.getInstance();
+            int year = c.get(Calendar.YEAR);
+            int month = c.get(Calendar.MONTH);
+            int day = c.get(Calendar.DAY_OF_MONTH);
+
+            // Create a new instance of DatePickerDialog and return it
+            return new DatePickerDialog(getActivity(), this, year, month, day);
+        }
+
+        public void onDateSet(DatePicker view, int year, int month, int day) {
+            // Do something with the date chosen by the user
+            time.set(year,month,day);
+            TaskCreate.updateDate();
+        }
+    }
+
+    public static class TimePickerFragment extends android.app.DialogFragment
+            implements TimePickerDialog.OnTimeSetListener {
+
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            // Use the current time as the default values for the picker
+            final Calendar c = Calendar.getInstance();
+            int hour = c.get(Calendar.HOUR_OF_DAY);
+            int minute = c.get(Calendar.MINUTE);
+
+            // Create a new instance of TimePickerDialog and return it
+            return new TimePickerDialog(getActivity(), this, hour, minute,
+                    DateFormat.is24HourFormat(getActivity()));
+        }
+
+        public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+            // Do something with the time chosen by the user
+            time.set(Calendar.HOUR_OF_DAY,hourOfDay);
+            time.set(Calendar.MINUTE, minute);
+            TaskCreate.updateTime();
+        }
+    }
+
+    public static void updateDate() {
+        dateTextView.setText(dateFormat.format(time.getTime()));
+    }
+
+    public static void updateTime() {
+        timeTextView.setText(timeFormat.format(time.getTime()));
+    }
+
     //
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_create);
         session = new UserSessionManager(getApplicationContext());
+        dateTextView = (TextView) this.findViewById(R.id.dateString);
+        timeTextView = (TextView) this.findViewById(R.id.timeString);
+        time = Calendar.getInstance();
+        String dateString = dateFormat.format(time.getTime());
+        String timeString = timeFormat.format(time.getTime());
+        dateTextView.setText(dateString);
+        timeTextView.setText(timeString);
 
         HashMap<String, String> user = session.getUserInfo();
         currentUserEmail = user.get(UserSessionManager.KEY_EMAIL);
@@ -39,13 +109,11 @@ public class TaskCreate extends AppCompatActivity {
         if(v.getId() == R.id.btn_submit_task){
             EditText taskName = (EditText)findViewById(R.id.et_task_name);
             EditText taskDesc = (EditText)findViewById(R.id.et_task_desc);
-            EditText dueDate = (EditText)findViewById(R.id.et_due_date);
             EditText price = (EditText)findViewById(R.id.et_price);
             Spinner taskType = (Spinner)findViewById(R.id.sp_task_type);
 
             String taskNameStr = taskName.getText().toString();
             String taskDescStr = taskDesc.getText().toString();
-            String dueDateStr = dueDate.getText().toString();
             String taskTypeStr = taskType.getSelectedItem().toString();
             String priceStr = price.getText().toString();
 
@@ -60,11 +128,11 @@ public class TaskCreate extends AppCompatActivity {
             t.setName(taskNameStr);
             t.setDesc(taskDescStr);
             t.setType(taskTypeStr);
-            t.setDueTime(dueDateStr);
             t.setCreator(str);
             t.setStatus("available");
             t.setCreatorPhone(phoneNumber);
             t.setPrice(priceStr);
+            t.setDueTime(dateFormat.format(time.getTime()) + timeFormat.format(time.getTime()));
 
             helper.insertTask(t);
             //Toast.makeText(TaskCreate.this, "Task \""+t.getName()+"\" has been created", Toast.LENGTH_SHORT).show();
@@ -76,29 +144,14 @@ public class TaskCreate extends AppCompatActivity {
 
     }
 
-    public static class TimePickerFragment extends DialogFragment
-            implements TimePickerDialog.OnTimeSetListener {
-
-        //@Override
-        public Dialog onCreateDialog(Bundle savedInstanceState) {
-            // Use the current time as the default values for the picker
-            final Calendar c = Calendar.getInstance();
-            int hour = c.get(Calendar.HOUR_OF_DAY);
-            int minute = c.get(Calendar.MINUTE);
-
-            // Create a new instance of TimePickerDialog and return it
-            return new TimePickerDialog(getActivity(), this, hour, minute,
-                    DateFormat.is24HourFormat(getActivity()));
-        }
-
-        public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-            // Do something with the time chosen by the user
-        }
+    public void showDatePickerDialog(View v) {
+        DialogFragment newFragment = new DatePickerFragment();
+        newFragment.show(getFragmentManager(), "datePicker");
     }
 
     public void showTimePickerDialog(View v) {
         DialogFragment newFragment = new TimePickerFragment();
-        newFragment.show(getSupportFragmentManager(), "timePicker");
+        newFragment.show(getFragmentManager(), "timePicker");
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -145,7 +198,5 @@ public class TaskCreate extends AppCompatActivity {
         // return super.onOptionsItemSelected(item);
         return MenuChoice(item);
     }
-
-
 }
 
